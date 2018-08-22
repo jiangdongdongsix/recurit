@@ -28,7 +28,7 @@ public class ExcelSheetService {
         HSSFSheet sheet=book.createSheet("recruit");
         List<Recruit> all = recruitService.findAll();
         String[] filedName = getFiledName(new Recruit());
-        int col = 8;
+        int col = 10;
         //生成表单的第一行，表头
         HSSFRow row0 =sheet.createRow(0);
         for(int i=0;i<col;i++){

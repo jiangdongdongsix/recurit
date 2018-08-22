@@ -1,13 +1,17 @@
 package com.advantech.recruit.controller;
 
 import com.advantech.recruit.entity.Recruit;
+import com.advantech.recruit.entity.RecruitDto;
 import com.advantech.recruit.servcie.ExcelSheetService;
+import com.advantech.recruit.servcie.PictureService;
 import com.advantech.recruit.servcie.RecruitService;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,6 +33,8 @@ public class RecruitController {
     @Autowired
     private ExcelSheetService  excelSheetService;
 
+    @Autowired
+    private PictureService pictureService;
 
 
     @GetMapping("/page")
@@ -46,12 +52,16 @@ public class RecruitController {
         return "report";
     }
 
+    @RequestMapping("/home")
+    public String home(){
+        return "home";
+    }
 
-    @RequestMapping("/save")
-    public String save(Recruit recruit){
+    @RequestMapping(value = "/save",method =RequestMethod.POST )
+    public String save(RecruitDto recruit, HttpServletRequest request){
         Recruit save = null;
         try {
-            save = recruitService.save(recruit);
+            save = recruitService.save(recruit,request);
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -121,6 +131,27 @@ public class RecruitController {
 //               LOGGER.error("导出文件关闭流出错！", e);
             }
         }
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/file",method = RequestMethod.POST)
+    public String upload(@RequestParam(value = "file", required = false) MultipartFile file, HttpServletRequest request){
+        System.out.println("门店图片上传！！！");
+        JSONObject jsonObject=new JSONObject();
+        try{
+            pictureService.saveOne(file,request);
+//            restaurantPhotoService.saveOne(file,request,displayArea);
+            jsonObject.put("Version", "1.0");
+            jsonObject.put("ErrorCode", "0");
+            jsonObject.put("ErrorMessage", "");
+        }catch (Exception e) {
+            jsonObject.put("Version", "1.0");
+            jsonObject.put("ErrorCode", "1");
+            jsonObject.put("ErrorMessage", e.getMessage());
+            e.printStackTrace();
+        }
+
+        return jsonObject.toJSONString();
     }
 
 

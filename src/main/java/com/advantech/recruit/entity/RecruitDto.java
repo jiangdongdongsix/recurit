@@ -5,28 +5,30 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-@Entity
-public class Recruit extends IdEntity{
+
+public class RecruitDto extends IdEntity{
 
     private String name;
 
     private String grander;
 
-    private String phone;
+    private String tel;
 
     private String email;
 
     private String school;
 
-    private String major;
+    private String professional;
 
     private String background;
 
-    private String description;
+    private String des;
 
     private String createTime;
 
     private String url;
+
+    private MultipartFile file;
 
 
     public String getName() {
@@ -45,12 +47,12 @@ public class Recruit extends IdEntity{
         this.grander = grander;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getTel() {
+        return tel;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 
     public String getEmail() {
@@ -69,12 +71,12 @@ public class Recruit extends IdEntity{
         this.school = school;
     }
 
-    public String getMajor() {
-        return major;
+    public String getProfessional() {
+        return professional;
     }
 
-    public void setMajor(String major) {
-        this.major = major;
+    public void setProfessional(String professional) {
+        this.professional = professional;
     }
 
     public String getBackground() {
@@ -85,13 +87,13 @@ public class Recruit extends IdEntity{
         this.background = background;
     }
 
-    @Column(name = "description",length = 2000)
-    public String getDescription() {
-        return description;
+    @Column(name = "des",length = 2000)
+    public String getDes() {
+        return des;
     }
 
-    public void setDescription(String des) {
-        this.description = description;
+    public void setDes(String des) {
+        this.des = des;
     }
 
     public String getCreateTime() {
@@ -110,4 +112,11 @@ public class Recruit extends IdEntity{
         this.url = url;
     }
 
+    public MultipartFile getFile() {
+        return file;
+    }
+
+    public void setFile(MultipartFile file) {
+        this.file = file;
+    }
 }
