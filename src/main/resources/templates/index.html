@@ -20,7 +20,9 @@
     <link rel="stylesheet" th:href="@{css/home.css}">
     <link rel="shortcut icon" href="../static/images/favicon.ico" />
     <link rel="bookmark" href="../static/images/favicon.ico" />
+
     <script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
     <script type="text/javascript" th:src="@{/js/swiper.min.js}"></script>
     <script type="text/javascript" th:src="@{/js/swiper.animate.min.js}"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
@@ -375,7 +377,7 @@
             <!--</div>-->
             <!--</div>-->
 
-            <div style="width: 90%;position: relative;left: 5%">
+            <div style="width: 70%;position: relative;left: 15%">
                 <div style="height:20px;"></div>
                 <div class="aui-content-up">
                     <form id="info" method="post" name="info" th:action="@{/save}">
@@ -385,7 +387,7 @@
                                        type="text" class="aui-form-control-two"
                                        name="name" onBlur="checkName()" required oninvalid="setCustomValidity('姓名不能为空')" oninput="setCustomValidity('')" id="1" placeholder="姓 名">
                             </div>
-                            <div style="margin-top: -13px">
+                            <div style="margin-top: -12px">
                                 <span class="aui-form-input tips" id="devname"></span>
                             </div>
                         </div>
@@ -395,7 +397,7 @@
                                         type="text" class="aui-form-control-two"
                                         name="phone" id="2" placeholder="手机号码" onBlur="checkPhone()" required oninvalid="setCustomValidity('手机号码不能为空')" oninput="setCustomValidity('')"/>
                             </div>
-                            <div style="margin-top: -13px">
+                            <div style="margin-top: -12px">
                                 <span class="aui-form-input tips" id="phone"></span>
                             </div>
                         </div>
@@ -404,7 +406,7 @@
                                 <input  th:style="'background:' + 'url(/images/credit.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
                                         type="text" class="aui-form-control-two" name="credit" id="3" placeholder="身份证号" onBlur="checkCredit()" required oninvalid="setCustomValidity('身份证号码不能为空')" oninput="setCustomValidity('')"/>
                             </div>
-                            <div style="margin-top: -13px">
+                            <div style="margin-top: -12px">
                                 <span class="aui-form-input tips" id="credit"></span>
                             </div>
                         </div>
@@ -413,7 +415,7 @@
                                 <input  th:style="'background:' + 'url(/images/email.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
                                         type="text" class="aui-form-control-two" name="email" id="4" placeholder="电子邮箱" onBlur="checkEmail()" required oninvalid="setCustomValidity('电子邮箱不能为空')" oninput="setCustomValidity('')"/>
                             </div>
-                            <div style="margin-top: -13px">
+                            <div style="margin-top: -12px">
                                 <span class="aui-form-input tips" id="email"></span>
                             </div>
                         </div>
@@ -422,7 +424,7 @@
                                 <input  th:style="'background:' + 'url(/images/school.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
                                         type="text" class="aui-form-control-two" name="school" id="5" placeholder="毕业院校" onBlur="checkSchool()" required oninvalid="setCustomValidity('毕业院校不能为空')" oninput="setCustomValidity('')"/>
                             </div>
-                            <div style="margin-top: -13px">
+                            <div style="margin-top: -12px">
                                 <span class="aui-form-input tips" id="school"></span>
                             </div>
                         </div>
@@ -431,7 +433,7 @@
                                 <input  th:style="'background:' + 'url(/images/major.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
                                         type="text" class="aui-form-control-two" name="major" id="6" placeholder="专 业" onBlur="checkMajor()" required oninvalid="setCustomValidity('专业不能为空')" oninput="setCustomValidity('')"/>
                             </div>
-                            <div style="margin-top: -13px">
+                            <div style="margin-top: -12px">
                                 <span class="aui-form-input tips" id="major"></span>
                             </div>
                         </div>
@@ -441,11 +443,33 @@
                             </div>
                         </div>
 
+                        <div class="aui-form-group clear">
+                            <div class="aui-form-input">
+                                <div class="aui-content-img-box aui-content-full">
+                                    <div class="aui-photo aui-up-img clear">
+                                        <section class="aui-file-up fl">
+                                            <img th:src="@{/images/up.png}" class="add-img">
+                                            <input type="file" name="file" id="file" class="file" value=""/>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <input type="submit"
                                class="btn btn-primary"
                                style="width: 70%; margin-left:15%; position: relative;margin-top:10%">
                         </input>
                     </form>
+                </div>
+                <div class="aui-mask aui-works-mask">
+                    <div class="aui-mask-content">
+                        <p class="aui-delete-text">确定要删除你上传的资料？</p>
+                        <p class="aui-check-text">
+                            <span class="aui-delete aui-accept-ok">确定</span>
+                            <span class="aui-accept-no">取消</span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>

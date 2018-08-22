@@ -229,9 +229,9 @@
 }
 
 .aui-form-input {
-    width: 70%;
+    width: 90%;
 	position:relative;
-    margin-left: 15%;
+    margin-left: 5%;
     margin-top: 0;
 }
 
@@ -247,7 +247,7 @@
     -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    height: 90px;
+    height: 75px;
     resize: none;
     border: 1px solid #b3cef9;
 }

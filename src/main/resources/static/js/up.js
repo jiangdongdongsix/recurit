@@ -1,7 +1,7 @@
 $(function() {
     var delParent;
     var defaults = {
-        fileType: ["jpg", "png", "bmp", "jpeg"],
+        fileType: ["jpg", "png", "doc", "pdf"],
         // 上传图片支持的格式
         fileSize: 1024 * 1024 * 10 // 上传的图片大小不得超过 10M
     };
@@ -21,10 +21,10 @@ $(function() {
         var numUp = imgContainer.find(".aui-up-section").length;
         var totalNum = numUp + fileList.length;
         //图片总的数量可自定义
-        if (fileList.length > 3 || totalNum > 3) {
-            alert("你好！上传图片不得超过3张，请重新选择");
+        if (fileList.length > 1 || totalNum > 1) {
+            alert("你好！上传图片不得超过1张，请重新选择");
             //一次选择上传超过3个  自己定义
-        } else if (numUp < 3) {
+        } else {
             fileList = validateUp(fileList);
             for (var i = 0; i < fileList.length; i++) {
                 var imgUrl = window.URL.createObjectURL(fileList[i]);
@@ -40,7 +40,7 @@ $(function() {
                     $(".aui-works-mask").show();
                     delParent = $(this).parent();
                 });
-                $img0.attr("src", "img/close.png").appendTo($section);
+                $img0.attr("src", "../images/close.png").appendTo($section);
                 var $img = $("<img class='aui-to-up-img aui-up-clarity'>");
                 $img.attr("src", imgArr[i]);
                 $img.appendTo($section);
