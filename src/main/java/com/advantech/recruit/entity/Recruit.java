@@ -12,17 +12,17 @@ public class Recruit extends IdEntity{
 
     private String grander;
 
-    private String tel;
+    private String phone;
 
     private String email;
 
     private String school;
 
-    private String professional;
+    private String major;
 
     private String background;
 
-    private String des;
+    private String description;
 
     private String createTime;
 
@@ -45,12 +45,12 @@ public class Recruit extends IdEntity{
         this.grander = grander;
     }
 
-    public String getTel() {
-        return tel;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setTel(String tel) {
-        this.tel = tel;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getEmail() {
@@ -69,12 +69,12 @@ public class Recruit extends IdEntity{
         this.school = school;
     }
 
-    public String getProfessional() {
-        return professional;
+    public String getMajor() {
+        return major;
     }
 
-    public void setProfessional(String professional) {
-        this.professional = professional;
+    public void setMajor(String major) {
+        this.major = major;
     }
 
     public String getBackground() {
@@ -85,13 +85,13 @@ public class Recruit extends IdEntity{
         this.background = background;
     }
 
-    @Column(name = "des",length = 2000)
-    public String getDes() {
-        return des;
+    @Column(name = "description",length = 2000)
+    public String getDescription() {
+        return description;
     }
 
-    public void setDes(String des) {
-        this.des = des;
+    public void setDescription(String des) {
+        this.description = description;
     }
 
     public String getCreateTime() {
