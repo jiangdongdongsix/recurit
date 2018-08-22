@@ -405,8 +405,8 @@
             <div class="job_btn_con ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.1s"
                  swiper-animate-delay="0.5s">
                 <div class="job_btn_list">
-                    <!--<a href="/report" class="job_btn add">填写信息</a>-->
-                    <a href="javascript:void(0);" onclick="window.open('./report');" target="_self" class="job_btn add">填写信息</a>
+                    <a href ="report.html" th:href="@{/report}" class="job_btn tel" >填写信息</a>
+                    <!--<button th:onclick="goReport()" target="_self" class="job_btn add">填写信息</button>-->
                     <a href="tel:029—87669933" class="job_btn tel">电话联系</a>
                 </div>
             </div>
@@ -456,6 +456,10 @@
     // }
     function wxShare() {
         alert("Thanks!");
+    };
+
+    function goReport(){
+        window.location.href= "https://www.baidu.com/";
     };
 
     $(function() {

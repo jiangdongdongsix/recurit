@@ -5,8 +5,8 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
-@Entity
-public class Recruit extends IdEntity{
+
+public class RecruitDto extends IdEntity{
 
     private String name;
 
@@ -27,6 +27,8 @@ public class Recruit extends IdEntity{
     private String createTime;
 
     private String url;
+
+    private MultipartFile file;
 
 
     public String getName() {
@@ -110,4 +112,11 @@ public class Recruit extends IdEntity{
         this.url = url;
     }
 
+    public MultipartFile getFile() {
+        return file;
+    }
+
+    public void setFile(MultipartFile file) {
+        this.file = file;
+    }
 }
