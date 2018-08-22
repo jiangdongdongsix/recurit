@@ -13,11 +13,11 @@
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-
     <link rel="stylesheet" th:href="@{/css/swiper.min.css}">
     <link rel="stylesheet" th:href="@{/css/animate.min.css}">
     <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/base.css}">
+    <link rel="stylesheet" th:href="@{css/home.css}">
     <link rel="shortcut icon" href="../static/images/favicon.ico" />
     <link rel="bookmark" href="../static/images/favicon.ico" />
     <script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
@@ -47,51 +47,6 @@
     </span>
 
     <div class="swiper-wrapper">
-        <!-- slide6 -->
-        <!--<section class="swiper-slide swiper-slide6 swiper-slide-v">-->
-            <!--<div class="logo ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.3s"-->
-                 <!--swiper-animate-delay="0s">-->
-                <!--<div class="box1">-->
-                    <!--<div class="box2">-->
-                        <!--<img class="box3" th:attr="src=@{/upload/wzp_logo.png}">-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-
-            <!--<div style="width: 50%;position: relative;left: 25%;top: 5%">-->
-                <!--<form id="info" method="post" th:action="@{/save}">-->
-                    <!--<input name="name"-->
-                           <!--th:style="'background:' + 'url(/images/person.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"-->
-                           <!--type="text" class="form-control" placeholder="name" aria-describedby="sizing-addon1">-->
-                    <!--<input name="tel"-->
-                           <!--th:style="'background:' + 'url(/images/phone.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"-->
-                           <!--type="text" class="form-control" placeholder="Credit" aria-describedby="sizing-addon1">-->
-                    <!--<input name="email"-->
-                           <!--th:style="'background:' + 'url(/images/email.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"-->
-                           <!--type="text" class="form-control" placeholder="phone" aria-describedby="sizing-addon1">-->
-                    <!--<input name="school"-->
-                           <!--th:style="'background:' + 'url(/images/school.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"-->
-                           <!--type="text" class="form-control" placeholder="email" aria-describedby="sizing-addon1">-->
-                    <!--<input name="professional"-->
-                           <!--th:style="'background:' + 'url(/images/major.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"-->
-                           <!--type="text" class="form-control" placeholder="school" aria-describedby="sizing-addon1">-->
-                    <!--<input name="background"-->
-                           <!--th:style="'background:' + 'url(/images/education.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"-->
-                           <!--type="text" class="form-control" placeholder="major" aria-describedby="sizing-addon1">-->
-                    <!--<input name="des"-->
-                           <!--th:style="'background:' + 'url(/images/description.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"-->
-                           <!--type="text" class="form-control" placeholder="education" aria-describedby="sizing-addon1">-->
-                    <!--<span>性别:</span>-->
-                    <!--<label><input name="Fruit" type="radio" value=""/>男 </label>-->
-                    <!--&nbsp;&nbsp;<label><input name="Fruit" type="radio" value=""/>女 </label>-->
-                    <!--<input type="submit" class="btn btn-primary"-->
-                            <!--style="width: 100%;position: relative;margin-top:10%">-->
-                    <!--</input>-->
-                <!--</form>-->
-
-            <!--</div>-->
-
-        <!--</section>-->
         <!--slide1-->
         <section class="swiper-slide swiper-slide1 swiper-slide-v">
             <div class="index-top ani" swiper-animate-effect="myZoomIn1" swiper-animate-duration="0.6s"
@@ -400,18 +355,101 @@
 
                 </div>
             </div>
+            <!--<div class="job_btn_con ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.1s"-->
+                 <!--swiper-animate-delay="0.5s">-->
+                <!--<div class="job_btn_list">-->
+                    <!--<a href="/report" class="button">填写信息</a>-->
+                    <!--<a href="tel:029—87669933" class="button">电话联系</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        </section>
 
 
-            <div class="job_btn_con ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.1s"
-                 swiper-animate-delay="0.5s">
-                <div class="job_btn_list">
-                    <!--<a href="/report" class="job_btn add">填写信息</a>-->
-                    <a href="javascript:void(0);" onclick="window.open('./report');" target="_self" class="job_btn add">填写信息</a>
-                    <a href="tel:029—87669933" class="job_btn tel">电话联系</a>
+        <section class="swiper-slide swiper-slide6 swiper-slide-v">
+            <!--<div class="logo ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.3s"-->
+            <!--swiper-animate-delay="0s">-->
+            <!--<div class="box1">-->
+            <!--<div class="box2">-->
+            <!--<img class="box3" th:attr="src=@{/upload/wzp_logo.png}">-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+
+            <div style="width: 90%;position: relative;left: 5%">
+                <div style="height:20px;"></div>
+                <div class="aui-content-up">
+                    <form id="info" method="post" name="info" th:action="@{/save}">
+                        <div class="aui-form-group clear">
+                            <div class="aui-form-input">
+                                <input th:style="'background:' + 'url(/images/person.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
+                                       type="text" class="aui-form-control-two"
+                                       name="name" onBlur="checkName()" required oninvalid="setCustomValidity('姓名不能为空')" oninput="setCustomValidity('')" id="1" placeholder="姓 名">
+                            </div>
+                            <div style="margin-top: -13px">
+                                <span class="aui-form-input tips" id="devname"></span>
+                            </div>
+                        </div>
+                        <div class="aui-form-group clear">
+                            <div class="aui-form-input">
+                                <input  th:style="'background:' + 'url(/images/phone.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
+                                        type="text" class="aui-form-control-two"
+                                        name="phone" id="2" placeholder="手机号码" onBlur="checkPhone()" required oninvalid="setCustomValidity('手机号码不能为空')" oninput="setCustomValidity('')"/>
+                            </div>
+                            <div style="margin-top: -13px">
+                                <span class="aui-form-input tips" id="phone"></span>
+                            </div>
+                        </div>
+                        <div class="aui-form-group clear">
+                            <div class="aui-form-input">
+                                <input  th:style="'background:' + 'url(/images/credit.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
+                                        type="text" class="aui-form-control-two" name="credit" id="3" placeholder="身份证号" onBlur="checkCredit()" required oninvalid="setCustomValidity('身份证号码不能为空')" oninput="setCustomValidity('')"/>
+                            </div>
+                            <div style="margin-top: -13px">
+                                <span class="aui-form-input tips" id="credit"></span>
+                            </div>
+                        </div>
+                        <div class="aui-form-group clear">
+                            <div class="aui-form-input">
+                                <input  th:style="'background:' + 'url(/images/email.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
+                                        type="text" class="aui-form-control-two" name="email" id="4" placeholder="电子邮箱" onBlur="checkEmail()" required oninvalid="setCustomValidity('电子邮箱不能为空')" oninput="setCustomValidity('')"/>
+                            </div>
+                            <div style="margin-top: -13px">
+                                <span class="aui-form-input tips" id="email"></span>
+                            </div>
+                        </div>
+                        <div class="aui-form-group clear">
+                            <div class="aui-form-input">
+                                <input  th:style="'background:' + 'url(/images/school.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
+                                        type="text" class="aui-form-control-two" name="school" id="5" placeholder="毕业院校" onBlur="checkSchool()" required oninvalid="setCustomValidity('毕业院校不能为空')" oninput="setCustomValidity('')"/>
+                            </div>
+                            <div style="margin-top: -13px">
+                                <span class="aui-form-input tips" id="school"></span>
+                            </div>
+                        </div>
+                        <div class="aui-form-group clear">
+                            <div class="aui-form-input">
+                                <input  th:style="'background:' + 'url(/images/major.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
+                                        type="text" class="aui-form-control-two" name="major" id="6" placeholder="专 业" onBlur="checkMajor()" required oninvalid="setCustomValidity('专业不能为空')" oninput="setCustomValidity('')"/>
+                            </div>
+                            <div style="margin-top: -13px">
+                                <span class="aui-form-input tips" id="major"></span>
+                            </div>
+                        </div>
+                        <div class="aui-form-group clear">
+                            <div class="aui-form-input">
+                                <textarea class="aui-form-control" name="description" id="7" minlength="5">特别说明...</textarea>
+                            </div>
+                        </div>
+
+                        <input type="submit"
+                               class="btn btn-primary"
+                               style="width: 70%; margin-left:15%; position: relative;margin-top:10%">
+                        </input>
+                    </form>
                 </div>
             </div>
-
         </section>
+
         <!-- slide8-->
         <section class="swiper-slide swiper-slide8 swiper-slide-v">
             <div class="logo">
@@ -441,7 +479,8 @@
     <div class="swiper-pagination"></div>
 </div>
 <script th:src="@{/js/code.min.js}"></script>
-
+<script th:src="@{/js/jquery.min.js}"></script>
+<script th:src="@{js/up.js}"></script>
 <script type="text/javascript" th:inline="javascript">
 
     // function sub(){
@@ -514,6 +553,73 @@
     window.onload=function(){
         if (!is_weixn()){
             just_play();
+        }
+    }
+
+    //验证姓名
+    function checkName(){
+        na=info.name.value;
+        if( na.length < 2 || na.length > 4) {
+            $('#1')[0].style.border="1px solid red";
+            devname.innerHTML='<font class="tips_false">长度是2~4个字符</font>';
+        }else{
+            $('#1')[0].style.border="1px solid green";
+            devname.innerHTML='<font class="tips_true">验证通过</font>';
+        }
+    }
+    //验证手机号码
+    function checkPhone(){
+        na=info.phone.value;
+        if( na.length < 11 || na.length > 11){
+            $('#2')[0].style.border="1px solid red";
+            phone.innerHTML='<font class="tips_false">必须是11位数字</font>';
+        }else{
+            $('#2')[0].style.border="1px solid green";
+            phone.innerHTML='<font class="tips_true">验证通过</font>';
+        }
+    }
+    //验证身份证号
+    function checkCredit(){
+        na=info.credit.value;
+        if( na.length < 18 || na.length > 18){
+            $('#3')[0].style.border="1px solid red";
+            credit.innerHTML='<font class="tips_false">必须是18位身份证号</font>';
+        }else{
+            $('#3')[0].style.border="1px solid green";
+            credit.innerHTML='<font class="tips_true">验证通过</font>';
+        }
+    }
+    //验证邮箱
+    function checkEmail(){
+        na=info.email.value;
+        if( na.length < 13 || na.indexOf("@") == -1){
+            $('#4')[0].style.border="1px solid red";
+            email.innerHTML='<font class="tips_false">必须是正确的邮箱格式</font>';
+        }else{
+            $('#4')[0].style.border="1px solid green";
+            email.innerHTML='<font class="tips_true">验证通过</font>';
+        }
+    }
+    //验证学校
+    function checkSchool(){
+        na=info.school.value;
+        if( na.length < 4 || na.length > 10){
+            $('#5')[0].style.border="1px solid red";
+            school.innerHTML='<font class="tips_false">字符在4~10之间</font>';
+        }else{
+            $('#5')[0].style.border="1px solid green";
+            school.innerHTML='<font class="tips_true">验证通过</font>';
+        }
+    }
+    //验证专业
+    function checkMajor(){
+        na=info.major.value;
+        if( na.length < 4 || na.length > 10){
+            $('#6')[0].style.border="1px solid red";
+            major.innerHTML='<font class="tips_false">字符在4~10之间</font>';
+        }else{
+            $('#6')[0].style.border="1px solid green";
+            major.innerHTML='<font class="tips_true">验证通过</font>';
         }
     }
 
