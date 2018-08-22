@@ -521,6 +521,80 @@
         }
     }
 
+
+    //验证姓名
+    function checkName(){
+        na=info.name.value;
+        if( na.length < 2 || na.length > 4) {
+            $('#1')[0].style.border="1px solid red";
+            devname.innerHTML='<font class="tips_false">长度是2~4个字符</font>';
+        }else{
+            $('#1')[0].style.border="1px solid green";
+            devname.innerHTML='<font class="tips_true">验证通过</font>';
+        }
+    }
+    //验证手机号码
+    function checkPhone(){
+        na=info.phone.value;
+        if( na.length < 11 || na.length > 11){
+            $('#2')[0].style.border="1px solid red";
+            phone.innerHTML='<font class="tips_false">必须是11位数字</font>';
+        }else{
+            $('#2')[0].style.border="1px solid green";
+            phone.innerHTML='<font class="tips_true">验证通过</font>';
+        }
+    }
+    //验证身份证号
+    function checkCredit(){
+        na=info.credit.value;
+        if( na.length < 18 || na.length > 18){
+            $('#3')[0].style.border="1px solid red";
+            credit.innerHTML='<font class="tips_false">必须是18位身份证号</font>';
+        }else{
+            $('#3')[0].style.border="1px solid green";
+            credit.innerHTML='<font class="tips_true">验证通过</font>';
+        }
+    }
+    //验证邮箱
+    function checkEmail(){
+        na=info.email.value;
+        if( na.length < 13 || na.indexOf("@") == -1){
+            $('#4')[0].style.border="1px solid red";
+            email.innerHTML='<font class="tips_false">必须是正确的邮箱格式</font>';
+        }else{
+            $('#4')[0].style.border="1px solid green";
+            email.innerHTML='<font class="tips_true">验证通过</font>';
+        }
+    }
+    //验证学校
+    function checkSchool(){
+        na=info.school.value;
+        if( na.length < 4 || na.length > 10){
+            $('#5')[0].style.border="1px solid red";
+            school.innerHTML='<font class="tips_false">字符在4~10之间</font>';
+        }else{
+            $('#5')[0].style.border="1px solid green";
+            school.innerHTML='<font class="tips_true">验证通过</font>';
+        }
+    }
+    //验证专业
+    function checkMajor(){
+        na=info.major.value;
+        if( na.length < 4 || na.length > 10){
+            $('#6')[0].style.border="1px solid red";
+            major.innerHTML='<font class="tips_false">字符在4~10之间</font>';
+        }else{
+            $('#6')[0].style.border="1px solid green";
+            major.innerHTML='<font class="tips_true">验证通过</font>';
+        }
+    }
+
+    //验证专业
+    function checkList(){
+        console.log();
+    }
+
+
 </script>
 
 
