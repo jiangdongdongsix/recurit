@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>2018研华科技软件园招聘-校园招聘网站</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+    <!--
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <script src="js/swiper.min.js"></script>
+    <script src="js/swiper.animate.min.js"></script>
+    -->
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" th:href="@{/css/swiper.min.css}">
+    <link rel="stylesheet" th:href="@{/css/animate.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="shortcut icon" href="../static/images/favicon.ico" />
+    <link rel="bookmark" href="../static/images/favicon.ico" />
+    <script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/swiper.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/swiper.animate.min.js}"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div class="swiper-container" id="swiper-container-v">
+
+    <section class="poster_wrap load" id="load">
+        <div class="p_loading">
+            <div class="p_loading_logo"></div>
+            <p class="p_loading_tip">美满人生，从新工作开始</p>
+        </div>
+    </section>
+
+    <div class="swiper-wrapper">
+        <!-- slide6 -->
+        <section class="swiper-slide swiper-slide6 swiper-slide-v">
+            <div class="logo ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.3s"
+                 swiper-animate-delay="0s">
+                <div class="box1">
+                    <div class="box2">
+                        <img class="box3" th:attr="src=@{/upload/wzp_logo.png}">
+                    </div>
+                </div>
+            </div>
+
+            <div style="width: 50%;position: relative;left: 25%;top: 5%">
+                <form id="info" method="post" th:action="@{/save}">
+                    <input name="name"
+                           th:style="'background:' + 'url(/images/person.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
+                           type="text" class="form-control" placeholder="name" aria-describedby="sizing-addon1">
+                    <input name="tel"
+                           th:style="'background:' + 'url(/images/phone.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
+                           type="text" class="form-control" placeholder="Credit" aria-describedby="sizing-addon1">
+                    <input name="email"
+                           th:style="'background:' + 'url(/images/email.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
+                           type="text" class="form-control" placeholder="phone" aria-describedby="sizing-addon1">
+                    <input name="school"
+                           th:style="'background:' + 'url(/images/school.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
+                           type="text" class="form-control" placeholder="email" aria-describedby="sizing-addon1">
+                    <input name="professional"
+                           th:style="'background:' + 'url(/images/major.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
+                           type="text" class="form-control" placeholder="school" aria-describedby="sizing-addon1">
+                    <input name="background"
+                           th:style="'background:' + 'url(/images/education.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
+                           type="text" class="form-control" placeholder="major" aria-describedby="sizing-addon1">
+                    <input name="des"
+                           th:style="'background:' + 'url(/images/description.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
+                           type="text" class="form-control" placeholder="education" aria-describedby="sizing-addon1">
+                    <span>性别:</span>
+                    <label><input name="Fruit" type="radio" value=""/>男 </label>
+                    &nbsp;&nbsp;<label><input name="Fruit" type="radio" value=""/>女 </label>
+                    <input type="submit" class="btn btn-primary"
+                           style="width: 100%;position: relative;margin-top:10%">
+                    </input>
+                </form>
+
+            </div>
+        </section>
+    </div>
+</div>
+<script th:src="@{/js/code.min.js}"></script>
+
+<script type="text/javascript" th:inline="javascript">
+
+</script>
+</body>
+</html>
+

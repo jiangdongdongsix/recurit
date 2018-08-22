@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Advantech Micro Recruitment</title>
+    <title>2018研华科技软件园招聘-校园招聘网站</title>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
     <!--
     <link rel="stylesheet" href="css/swiper.min.css">
@@ -17,14 +17,17 @@
 
     <link rel="stylesheet" th:href="@{/css/swiper.min.css}">
     <link rel="stylesheet" th:href="@{/css/animate.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="shortcut icon" href="../static/images/favicon.ico" />
+    <link rel="bookmark" href="../static/images/favicon.ico" />
     <script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
     <script type="text/javascript" th:src="@{/js/swiper.min.js}"></script>
     <script type="text/javascript" th:src="@{/js/swiper.animate.min.js}"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
     <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 
 <body>
@@ -36,55 +39,59 @@
             <p class="p_loading_tip">美满人生，从新工作开始</p>
         </div>
     </section>
-
+    <!--音乐播放-->
+    <span id="musicControl">
+        <a id="mc_play" class="on" onclick="play_music()">
+            <audio id="musicfx" th:attr="src=@{/music/children.mp3}" autoplay preload loop="loop"></audio>
+        </a>
+    </span>
 
     <div class="swiper-wrapper">
         <!-- slide6 -->
-        <section class="swiper-slide swiper-slide6 swiper-slide-v">
-            <div class="logo ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.3s"
-                 swiper-animate-delay="0s">
-                <div class="box1">
-                    <div class="box2">
-                        <img src="../static/upload/wzp_logo.png">
-                    </div>
-                </div>
-            </div>
-            <div class="input-group input-group-lg" style="width: 50%;position: relative;left: 25%;top: 5%">
-                <form id="info" method="post" th:action="@{/save}">
-                    <input name="name"
-                           style="background: url(static/images/person.png) no-repeat;background-size: 30px 30px;background-position: 5px center;padding-left: 40px;margin-bottom: 4%"
-                           type="text" class="form-control" placeholder="name" aria-describedby="sizing-addon1">
-                    <input name="tel"
-                           style="background: url(static/images/credit.png) no-repeat;background-size: 30px 30px;background-position: 5px center;padding-left: 40px;margin-bottom: 6%"
-                           type="text" class="form-control" placeholder="Credit" aria-describedby="sizing-addon1">
-                    <input name="email"
-                           style="background: url(static/images/phone.png) no-repeat;background-size: 30px 30px;background-position: 5px center;padding-left: 40px;margin-bottom: 6%"
-                           type="text" class="form-control" placeholder="phone" aria-describedby="sizing-addon1">
-                    <input name="school"
-                           style="background: url(static/images/email.png) no-repeat;background-size: 30px 30px;background-position: 5px center;padding-left: 40px;margin-bottom: 6%"
-                           type="text" class="form-control" placeholder="email" aria-describedby="sizing-addon1">
-                    <input name="professional"
-                           style="background: url(static/images/school.png) no-repeat;background-size: 30px 30px;background-position: 5px center;padding-left: 40px;margin-bottom: 6%"
-                           type="text" class="form-control" placeholder="school" aria-describedby="sizing-addon1">
-                    <input name="background"
-                           style="background: url(static/images/major.png) no-repeat;background-size: 30px 30px;background-position: 5px center;padding-left: 40px;margin-bottom: 6%"
-                           type="text" class="form-control" placeholder="major" aria-describedby="sizing-addon1">
-                    <input name="des"
-                           style="background: url(static/images/education.png) no-repeat;background-size: 30px 30px;background-position: 5px center;padding-left: 40px;margin-bottom: 6%"
-                           type="text" class="form-control" placeholder="education" aria-describedby="sizing-addon1">
-                    <input style="background: url(static/images/description.png) no-repeat;background-size: 30px 30px;background-position: 5px center;padding-left: 40px;margin-bottom: 6%"
-                           type="textarea" class="form-control" placeholder="note" aria-describedby="sizing-addon1">
-                    性别
-                    <label><input name="Fruit" type="radio" value=""/>男 </label>
-                    <label><input name="Fruit" type="radio" value=""/>女 </label>
-                    <input type="submit" class="btn btn-primary"
-                            style="width: 100%;position: relative;margin-top: 15%">提 交
-                    </input>
-                </form>
+        <!--<section class="swiper-slide swiper-slide6 swiper-slide-v">-->
+            <!--<div class="logo ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.3s"-->
+                 <!--swiper-animate-delay="0s">-->
+                <!--<div class="box1">-->
+                    <!--<div class="box2">-->
+                        <!--<img class="box3" th:attr="src=@{/upload/wzp_logo.png}">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
 
-            </div>
+            <!--<div style="width: 50%;position: relative;left: 25%;top: 5%">-->
+                <!--<form id="info" method="post" th:action="@{/save}">-->
+                    <!--<input name="name"-->
+                           <!--th:style="'background:' + 'url(/images/person.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"-->
+                           <!--type="text" class="form-control" placeholder="name" aria-describedby="sizing-addon1">-->
+                    <!--<input name="tel"-->
+                           <!--th:style="'background:' + 'url(/images/phone.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"-->
+                           <!--type="text" class="form-control" placeholder="Credit" aria-describedby="sizing-addon1">-->
+                    <!--<input name="email"-->
+                           <!--th:style="'background:' + 'url(/images/email.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"-->
+                           <!--type="text" class="form-control" placeholder="phone" aria-describedby="sizing-addon1">-->
+                    <!--<input name="school"-->
+                           <!--th:style="'background:' + 'url(/images/school.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"-->
+                           <!--type="text" class="form-control" placeholder="email" aria-describedby="sizing-addon1">-->
+                    <!--<input name="professional"-->
+                           <!--th:style="'background:' + 'url(/images/major.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"-->
+                           <!--type="text" class="form-control" placeholder="school" aria-describedby="sizing-addon1">-->
+                    <!--<input name="background"-->
+                           <!--th:style="'background:' + 'url(/images/education.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"-->
+                           <!--type="text" class="form-control" placeholder="major" aria-describedby="sizing-addon1">-->
+                    <!--<input name="des"-->
+                           <!--th:style="'background:' + 'url(/images/description.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"-->
+                           <!--type="text" class="form-control" placeholder="education" aria-describedby="sizing-addon1">-->
+                    <!--<span>性别:</span>-->
+                    <!--<label><input name="Fruit" type="radio" value=""/>男 </label>-->
+                    <!--&nbsp;&nbsp;<label><input name="Fruit" type="radio" value=""/>女 </label>-->
+                    <!--<input type="submit" class="btn btn-primary"-->
+                            <!--style="width: 100%;position: relative;margin-top:10%">-->
+                    <!--</input>-->
+                <!--</form>-->
 
-        </section>
+            <!--</div>-->
+
+        <!--</section>-->
         <!--slide1-->
         <section class="swiper-slide swiper-slide1 swiper-slide-v">
             <div class="index-top ani" swiper-animate-effect="myZoomIn1" swiper-animate-duration="0.6s"
@@ -92,12 +99,24 @@
                 <div class="logo">
                     <div class="box1">
                         <div class="box2">
-                            <img src="../static/upload/wzp_logo.png">
+                            <img th:attr="src=@{/upload/wzp_logo.png}">
                         </div>
                     </div>
                 </div>
-                <h1 class="poster_tit">研华科技</h1>
-                <p class="poster_details">美满人生，从新工作开始</p>
+                <h1 class="poster_tit" style="margin-top: 50px">研华科技2019毕业生</h1>
+                <h1 class="poster_tit" style="margin-top: 20px">招募令</h1>
+                <p>
+                    <span style="font-weight:bold;color:green;font-size: 16px">
+                        想在物联网应用最前沿的视野？<br>
+                        想大显身手拥有专业的职业发展平台？<br>
+                        想在活泼有爱奋发向上的氛围里开心工作？<br>
+                    </span>
+                </p>
+                <h1 class="poster_tit" style="margin-top: 20px">
+                    <span style="font-weight:bold;color:yellow;font-size: 24px">
+                        请看这里...
+                    </span>
+                </h1>
             </div>
 
             <div class="building ani" swiper-animate-effect="myZoomIn2" swiper-animate-duration="0.6s"
@@ -128,55 +147,118 @@
 
 
             <h3 class="about_us_tit ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.3s"
-                swiper-animate-delay="0.3s"><i class="about_us_tit_ico"></i>认识我们</h3>
-            <div class="about_us_msg_p ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s"
+                swiper-animate-delay="0.3s"><i class="about_us_tit_ico"></i>关于研华</h3>
+            <div swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s"
                  swiper-animate-delay="0.5s">
-                自1983年创立以来，研华成为全方位的系统整合及设计服务的优秀厂商。研华与系统整合商紧密合作，以提供各类广泛应用与横跨各种产业的完整解决方案。研华的使命就是充分实践智能地球的推手，成为自动化产业、嵌入计算机、物联网具有关键影响力的全球企业。
+                <p style="padding: 0 22px">
+                    1.	为迎接物联网(IoT)和云端运算时代的到来，研华以智能地球推手(Enabling an Intelligent Planet)作为公司的全新企业形象及愿景。<br><br>
+                    2.	自1983年成立至今，研华全球分支机构遍及21个国家，拥有专职员工逾8000名。<br><br>
+                    3.	研华事业群组织分别专注于工业自动化、嵌入式电脑、智能系统及智能服务四大市场，并联合多家合作伙伴形成了强大的技术服务和营销网络，为客户提供真正全球化布局、本土化响应的便捷服务。<br><br>
+                    4.	研华以智能地球推手为企业使命，并以“驱动智慧城市创新 共建物联产业典范”为企业目标，协助各产业加速其智能化经营，致力于成为智能城市及物联网领域中最具关键影响力的全球企业。<br>
+                </p>
             </div>
 
         </section>
         <!-- slide3 -->
         <section class="swiper-slide swiper-slide3 swiper-slide-v">
 
-            <h1 class="abus_head"><i class="about_us_tit_ico"></i>我们的福利</h1>
+            <h1 class="abus_head"><i class="about_us_tit_ico"></i>完整的福利体系</h1>
 
 
             <div class="welf_bg">
                 <div class="one ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
                      swiper-animate-duration="0.5s" swiper-animate-delay="0s"><span>五险一金</span></div>
                 <div class="two ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0.1s"><span>每周双休</span></div>
+                     swiper-animate-duration="0.5s" swiper-animate-delay="0.1s"><span>补充商业保险</span></div>
                 <div class="thr ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"><span>福利待遇好</span></div>
+                     swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"><span>带薪假期</span></div>
                 <div class="thi ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"><span>发展前景好</span></div>
+                     swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"><span>员工定期体检</span></div>
                 <div class="fiv ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"><span>晋升空间大</span></div>
-                <div class="six ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"><span>提供培训</span></div>
+                     swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"><span>福委会丰富活动</span></div>
             </div>
         </section>
+
         <!-- slide4 -->
         <section class="swiper-slide swiper-slide4 swiper-slide-v">
+
+            <h1 class="abus_head"><i class="about_us_tit_ico"></i>提升工作能力</h1>
+
+
+            <div class="welf_bg">
+                <div class="one ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
+                     swiper-animate-duration="0.5s" swiper-animate-delay="0s"><span>新主管训练营</span></div>
+                <div class="two ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
+                     swiper-animate-duration="0.5s" swiper-animate-delay="0.1s"><span>管理工作坊</span></div>
+                <div class="thr ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
+                     swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"><span>知识分享</span></div>
+                <div class="thi ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
+                     swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"><span>新人培训（读书会\部门对对碰）</span></div>
+                <div class="fiv ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
+                     swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"><span>TACP-研华外训</span></div>
+            </div>
+        </section>
+
+        <!-- slide5 -->
+        <section class="swiper-slide swiper-slide5 swiper-slide-v">
+
+            <h1 class="abus_head"><i class="about_us_tit_ico"></i>提升个人素养</h1>
+
+
+            <div class="welf_bg">
+                <div class="one ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
+                     swiper-animate-duration="0.5s" swiper-animate-delay="0s"><span>员工素质培训</span></div>
+                <div class="two ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
+                     swiper-animate-duration="0.5s" swiper-animate-delay="0.1s"><span>读书会</span></div>
+                <div class="thr ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
+                     swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"><span>员工文化活动（知性探访\益行一路）</span></div>
+                <div class="thi ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
+                     swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"><span>艺文活动 </span></div>
+            </div>
+        </section>
+
+        <!-- slide6 -->
+        <section class="swiper-slide swiper-slide6 swiper-slide-v">
+
+            <h1 class="abus_head"><i class="about_us_tit_ico"></i>实现美满人生</h1>
+
+
+            <div class="welf_bg">
+                <div class="one ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
+                     swiper-animate-duration="0.5s" swiper-animate-delay="0s"><span>弱势群体关注</span></div>
+                <div class="two ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
+                     swiper-animate-duration="0.5s" swiper-animate-delay="0.1s"><span>员工社团互动（乐活\亲子\桌游）</span></div>
+                <div class="thr ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
+                     swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"><span>主题日活动（家庭日\庆生会\尾牙\跨区域旅游）</span></div>
+            </div>
+        </section>
+
+        <!-- slide7 -->
+        <section class="swiper-slide swiper-slide7 swiper-slide-v">
             <h1 class="posit_tit"><i class="about_us_tit_ico"></i>我们招聘的职位</h1>
             <div class="swiper-container ani" id="swiper-container-h" swiper-animate-effect="rotateInUpLeft"
                  swiper-animate-duration="0.5s" swiper-animate-delay="0s">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide slide1">
                         <div class="posit_details_head">
-                            <h3 class="posit_details_tit">公关专员</h3>
-                            <span class="posit_details_money"><strong>面议</strong></span>
-                            <p class="posit_details_tip">经验不限、学历本科</p>
+                            <h3 class="posit_details_tit">01	研发类岗位</h3>
+                            <span class="posit_details_money"><strong>前台开发工程师</strong></span>
+                            <!--<p class="posit_details_tip">经验不限、学历本科</p>-->
                         </div>
                         <div class="job_details">
-                            <p class="job_address">工作地点：广东省深圳市南山区高新科技园</p>
-                            <h3 class="job_name">任职要求：<a class="job_name_details" href="#">职位详情&gt;&gt;</a></h3>
-                            <div class="job_msg">任职资格：1.协助领导处理与各部门沟通和合作事宜；<br>
-                                2.收集媒体信息，处理与各类媒体接洽、合作关系，协助媒介公关；<br>
-                                3.注意收集影响本公司形象、声誉、关系的因素和事件信息，分析其后果，及时向领导提出对策建议；<br>
-                                4.配合做好来宾迎送、接待、陪同、参观、讲解等工作；<br>
-                                5.负责对合同的审阅、整理、归档、款项申请及保管工作；<br>
-                                6.完成领导交办的其它工作。
+                            <!--<p class="job_address">工作地点：广东省深圳市南山区高新科技园</p>-->
+                            <!--<h3 class="job_name">任职要求：-->
+                                <!--<a class="job_name_details" href="#">职位详情&gt;&gt;</a>-->
+                            <!--</h3>-->
+                            <div>
+                                <h3 class="posit_details_tit">任职资格：</h3>
+                                <p>
+                                    1. 2019年毕业，计算机、数学等相关专业本科及以上学历；<br>
+                                    2. 对Web前端开发(Javascript/HTML/CSS)有基础；<br>
+                                    3. 熟悉掌握VUE、React等前端框架者优先；<br>
+                                    4. 具有很强的责任心，能够有一定的抗压性，积极主动，对开发工作有较高的热情；<br>
+                                    5. 具有良好的学习能力及分析解决问题能力，具良好的沟通能力及团队协作能力。<br>
+                                </p>
                             </div>
 
                         </div>
@@ -187,18 +269,24 @@
                     <div class="swiper-slide slide2">
 
                         <div class="posit_details_head">
-                            <h3 class="posit_details_tit">前台接待/总机/接待生</h3>
-                            <span class="posit_details_money"><strong>面议</strong></span>
-                            <p class="posit_details_tip">经验不限、学历不限</p>
+                            <h3 class="posit_details_tit">01	研发类岗位</h3>
+                            <span class="posit_details_money"><strong>JAVA开发工程师：</strong></span>
+                            <!--<p class="posit_details_tip">经验不限、学历不限</p>-->
                         </div>
                         <div class="job_details">
-                            <p class="job_address">工作地点：广东省深圳市南山区高新科技园</p>
-                            <h3 class="job_name">任职要求：<a class="job_name_details" href="#">职位详情&gt;&gt;</a></h3>
-                            <div class="job_msg">任职资格：1、准确接听/转接电话，接待来访客人并及时准确通知被访人员；<br>
-                                2、收发公司邮件、报刊、传真和物品等并做好登记管理以及转递工作；<br>
-                                3、熟悉掌握前台各项操作流程，并熟知各会员卡的种类，以及卖品和出租更衣柜的销售价格；<br>
-                                4、完成上级主管交办的其它工作，做好其他部门的协助工作；<br>
-                                5、具有良好的待人接物及沟通协调能力，具有服务意识，负有责任心，性格活泼开朗，具有亲和力<br>
+                            <!--<p class="job_address">工作地点：广东省深圳市南山区高新科技园</p>-->
+                            <!--<h3 class="job_name">任职要求：-->
+                                <!--&lt;!&ndash;<a class="job_name_details" href="#">职位详情&gt;&gt;</a>&ndash;&gt;-->
+                            <!--</h3>-->
+                            <div>
+                                <h3 class="posit_details_tit">任职资格：</h3>
+                                <p>
+                                    1. 2019年毕业，计算机、数学等相关专业本科及以上学历；<br>
+                                    2. 对Web后端开发有一定基础，掌握面向对象程序设计与基本的设计模式；<br>
+                                    3. 熟悉Spring框架者优先；<br>
+                                    4. 具有很强的责任心，能够有一定的抗压性，积极主动，对开发工作有较高的热情；<br>
+                                    5. 具有良好的学习能力及分析解决问题能力，具良好的沟通能力及团队协作能力。<br>
+                                </p>
                             </div>
 
                         </div>
@@ -207,19 +295,24 @@
                     <div class="swiper-slide slide3">
 
                         <div class="posit_details_head">
-                            <h3 class="posit_details_tit">Web前端开发、互联网软件开发工程师</h3>
-                            <span class="posit_details_money"><strong>面议</strong></span>
-                            <p class="posit_details_tip">经验不限、学历大专</p>
+                            <h3 class="posit_details_tit">01	研发类岗位</h3>
+                            <span class="posit_details_money"><strong>云平台开发工程师：</strong></span>
+                            <!--<p class="posit_details_tip">经验不限、学历大专</p>-->
                         </div>
                         <div class="job_details">
-                            <p class="job_address">工作地点：广东省深圳市南山区高新科技园</p>
-                            <h3 class="job_name">任职要求：<a class="job_name_details" href="#">职位详情&gt;&gt;</a></h3>
-                            <div class="job_msg">
-                                任职资格：精通javascript、html；精通PS、Dreamweaver;<br>
-                                精通WEB标准，熟练运用 DIV+CSS 来制作符合 w3c 规范的页面;<br>
-                                具备熟练的编写和修改代码能力;<br>
-                                懂得网络营销、精通页面优化技巧;<br>
-                                具备良好的团队合作精神、较好的沟通能力、高度的责任感;
+                            <!--<p class="job_address">工作地点：广东省深圳市南山区高新科技园</p>-->
+                            <!--<h3 class="job_name">任职要求：-->
+                                <!--&lt;!&ndash;<a class="job_name_details" href="#">职位详情&gt;&gt;</a>&ndash;&gt;-->
+                            <!--</h3>-->
+                            <div>
+                                <h3 class="posit_details_tit">任职资格：</h3>
+                                <p>
+                                    1.	2019年毕业，计算机、数学等相关专业本科及以上学历；<br>
+                                    2.	熟悉Linux系统管理，能够使用脚本自动执行任务，了解虚拟化技术，包含服务器、网络，存储和互连技术等；<br>
+                                    3.	实作经验C / C ++，Python和/或Java，熟悉Git、Jenkins等相关工具；<br>
+                                    4.	具有很强的责任心，能够有一定的抗压性，积极主动，对开发工作有较高的热情；<br>
+                                    5.	具有良好的学习能力及分析解决问题能力，具良好的沟通能力及团队协作能力。<br>
+                                </p>
                             </div>
 
                         </div>
@@ -229,20 +322,24 @@
 
                     <div class="swiper-slide slide4">
                         <div class="posit_details_head">
-                            <h3 class="posit_details_tit">总经理助理/总裁助理/总经理秘书</h3>
-                            <span class="posit_details_money"><strong>面议</strong></span>
-                            <p class="posit_details_tip">经验不限、学历大专</p>
+                            <h3 class="posit_details_tit">01	研发类岗位</h3>
+                            <span class="posit_details_money"><strong>软件测试：</strong></span>
+                            <!--<p class="posit_details_tip">经验不限、学历大专</p>-->
                         </div>
                         <div class="job_details">
-                            <p class="job_address">工作地点：广东省深圳市南山区高新科技园</p>
-                            <h3 class="job_name">任职要求：<a class="job_name_details" href="#">职位详情&gt;&gt;</a></h3>
-                            <div class="job_msg">任职资格：1、负责对项目出现的各类问题进行沟通协调，及时向总裁反馈重要信息；<br>
-                                2、根据总裁需要，搜集行业相关信息，统计数据，撰写可行性研究报告等供总经理决策；<br>
-                                3、协助总裁与客户建立良好的合作关系，并负责做好公司重要来宾的接待安排；<br>
-                                4、撰写总裁需要的有关报告、文件；<br>
-                                5、处理涉及总裁的电话、邮件、传真等各种渠道的信息，做到合理过滤和正确传达；<br>
-                                6、有总裁亲自出面进行的接待，其餐饮、住宿、旅游等具体细节有总裁助理协助行政部共同安排；<br>
-                                7、完成公司领导交办的其他工作任务；
+                            <!--<p class="job_address">工作地点：广东省深圳市南山区高新科技园</p>-->
+                            <!--<h3 class="job_name">任职要求：-->
+                                <!--&lt;!&ndash;<a class="job_name_details" href="#">职位详情&gt;&gt;</a>&ndash;&gt;-->
+                            <!--</h3>-->
+                            <div>
+                                <h3 class="posit_details_tit">任职资格：</h3>
+                                <p>
+                                    1.	2019年毕业，计算机、数学等相关专业本科及以上学历；<br>
+                                    2.	了解Web类软件产品以及软件测试的基本知识，具备一定开发能力；<br>
+                                    3.	了解软件性能、压力、稳定性测试的概念，有相关测试经验、工具使用经验者优先；<br>
+                                    4.	具有很强的责任心，能够有一定的抗压性，积极主动，对测试工作有较高的热情；<br>
+                                    5.	具有良好的思维能力及分析解决问题能力，具良好的沟通能力及团队协作能力。<br>
+                                </p>
                             </div>
 
                         </div>
@@ -252,14 +349,49 @@
 
                     <div class="swiper-slide slide5">
                         <div class="posit_details_head">
-                            <h3 class="posit_details_tit">文案策划</h3>
-                            <span class="posit_details_money"><strong>面议</strong></span>
-                            <p class="posit_details_tip">经验不限、学历本科</p>
+                            <h3 class="posit_details_tit">02	其它类岗位</h3>
+                            <span class="posit_details_money"><strong>软件产品经理：</strong></span>
+                            <!--<p class="posit_details_tip">经验不限、学历本科</p>-->
                         </div>
                         <div class="job_details">
-                            <p class="job_address">工作地点：广东省深圳市南山区高新科技园</p>
-                            <h3 class="job_name">任职要求：<a class="job_name_details" href="#">职位详情&gt;&gt;</a></h3>
-                            <div class="job_msg">任职资格：1、文笔流畅，触觉敏锐，思路清晰，良好的沟通能力和演讲能力；<br>2、熟练操作PPT，Excel等相关办公软件；了解无线WiFi网络常识，乐于追赶时尚潮流；<br>3、熟悉微营销，擅长媒体的媒介数据分析、媒体策略、投放计划、广告监测执行、广告效果评估等相关工作，具备独立的媒体策划能力和提案能力，有成功策划案例者优先；<br>4、具备良好的职业素养、较强的执行力、责任心、工作主动性、服务意识、沟通能力和团队合作精神。<br>5、本科或以上学历，2年以上广告公司媒介策划相关工作经验。
+                            <!--<p class="job_address">工作地点：广东省深圳市南山区高新科技园</p>-->
+                            <!--<h3 class="job_name">任职要求：-->
+                                <!--&lt;!&ndash;<a class="job_name_details" href="#">职位详情&gt;&gt;</a>&ndash;&gt;-->
+                            <!--</h3>-->
+                            <div>
+                                <h3 class="posit_details_tit">任职资格：</h3>
+                                <p>
+                                    1.	计算机、自动化等相关专业本科及以上学历；<br>
+                                    2.	出色的沟通能力，拥有了解用户 / 客户需求的能力技巧；<br>
+                                    3.	有Web相关软件开发经验佳，熟悉互联网云平台架构（IaaS、PaaS、SaaS）者佳；<br>
+                                    4.	高效地团队协作和文化融合能力，具有良好的思维能力及分析解决问题能力。<br>
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="posit_arrow_bot"></div>
+                    </div>
+
+                    <div class="swiper-slide slide6">
+                        <div class="posit_details_head">
+                            <h3 class="posit_details_tit">02	其它类岗位</h3>
+                            <span class="posit_details_money"><strong>云平台应用工程师：</strong></span>
+                            <!--<p class="posit_details_tip">经验不限、学历本科</p>-->
+                        </div>
+                        <div class="job_details">
+                            <!--<p class="job_address">工作地点：广东省深圳市南山区高新科技园</p>-->
+                            <!--<h3 class="job_name">任职要求：-->
+                            <!--&lt;!&ndash;<a class="job_name_details" href="#">职位详情&gt;&gt;</a>&ndash;&gt;-->
+                            <!--</h3>-->
+                            <div>
+                                <h3 class="posit_details_tit">任职资格：</h3>
+                                <p>
+                                    1.	计算机相关专业本科及以上学历；<br>
+                                    2.	至少具有Bash shell编程的经验,Java或python编程经验是；<br>
+                                    3.	了解服务器，存储和互连技术，熟悉网络架构与网络设备管理；<br>
+                                    4.	具有很强的责任心，能够有一定的抗压性，积极主动，对开发工作有较高的热情；<br>
+                                    5.	具有良好的学习能力及分析解决问题能力，具良好的沟通能力及团队协作能力。<br>
+                                </p>
                             </div>
 
                         </div>
@@ -273,31 +405,32 @@
             <div class="job_btn_con ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.1s"
                  swiper-animate-delay="0.5s">
                 <div class="job_btn_list">
-                    <a href="#" class="job_btn add">投个简历</a>
-                    <a href="tel:0755-12345678" class="job_btn tel">电话联系</a>
+                    <!--<a href="/report" class="job_btn add">填写信息</a>-->
+                    <a href="javascript:void(0);" onclick="window.open('./report');" target="_self" class="job_btn add">填写信息</a>
+                    <a href="tel:029—87669933" class="job_btn tel">电话联系</a>
                 </div>
             </div>
 
         </section>
-        <!-- slide5-->
-        <section class="swiper-slide swiper-slide5 swiper-slide-v">
+        <!-- slide8-->
+        <section class="swiper-slide swiper-slide8 swiper-slide-v">
             <div class="logo">
                 <div class="box1">
                     <div class="box2">
-                        <img src="../static/upload/wzp_logo.png">
+                        <img class="box3" th:attr="src=@{/upload/wzp_logo.png}">
                     </div>
                 </div>
             </div>
-            <p class="praise_tip ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.3s"
-               swiper-animate-delay="0s">已有<b>5</b>人觉得这家公司值得加入</p>
+            <p class="praise_tip ani" href="javascript:;" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.3s"
+               swiper-animate-delay="0s">已有<b> 5 </b>人觉得这家公司值得加入</p>
             <a class="praise_btn ani" href="javascript:;" swiper-animate-effect="fadeInUp"
                swiper-animate-duration="0.3s" swiper-animate-delay="0.1s">
                 <i><em></em></i><span>点赞，值得加入</span>
             </a>
-            <a class="praise_share_btn ani" href="javascript:;" swiper-animate-effect="fadeInUp"
+            <a class="praise_share_btn ani" href="javascript:void(0);" onclick="wxShare()" swiper-animate-effect="fadeInUp"
                swiper-animate-duration="0.3s" swiper-animate-delay="0.2s">分享给好友</a>
-            <a class="more_position ani" href="#" id="viewmoreinfozp" swiper-animate-effect="fadeInUp"
-               swiper-animate-duration="0.3s" swiper-animate-delay="0.3s">查看更多职位&gt;&gt;</a>
+            <!--<a class="more_position ani" href="#" id="viewmoreinfozp" swiper-animate-effect="fadeInUp"-->
+               <!--swiper-animate-duration="0.3s" swiper-animate-delay="0.3s">查看更多职位&gt;&gt;</a>-->
         </section>
 
 
@@ -311,16 +444,79 @@
 
 <script type="text/javascript" th:inline="javascript">
 
-    function sub(){
-        $.ajax({
-            type:"post",
-            url:"@{/save}",
-            data:$("#formApply").serialize(),
-            success: function (data) {
-                // window.location.reload();
-            }
-        })
+    // function sub(){
+    //     $.ajax({
+    //         type:"post",
+    //         url:"@{/save}",
+    //         data:$("#formApply").serialize(),
+    //         success: function (data) {
+    //             // window.location.reload();
+    //         }
+    //     })
+    // }
+    function wxShare() {
+        alert("Thanks!");
+    };
+
+    $(function() {
+        play_music();
+    });
+    function play_music(){
+        if ($('#mc_play').hasClass('on')){
+            $('#mc_play audio').get(0).pause();
+            $('#mc_play').attr('class','stop');
+        }else{
+            $('#mc_play audio').get(0).play();
+            $('#mc_play').attr('class','on');
+        }
+        // $('#music_play_filter').hide();
+        // event.stopPropagation(); //阻止冒泡
+    };
+    function just_play(id){
+        $('#mc_play audio').get(0).play();
+        $('#mc_play').attr('class','on');
+        if (typeof(id)!='undefined'){
+            // $('#music_play_filter').hide();
+        }
+        // event.stopPropagation(); //阻止冒泡
+    };
+    function is_weixn(){
+        return false;
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
+            return true;
+        } else {
+            return false;
+        }
+    };
+    var play_filter=document.getElementById('music_play_filter');
+    play_filter.addEventListener('click', function(){
+        just_play(1);
+    });
+    play_filter.addEventListener('touchstart', function(){
+        just_play(1);
+    });
+    play_filter.addEventListener('touchend', function(){
+        just_play(1);
+    });
+    play_filter.addEventListener('touchmove', function(){
+        just_play(1);
+    });
+    play_filter.addEventListener('mousedown', function(){
+        just_play(1);
+    });
+    play_filter.addEventListener('mouseup', function(){
+        just_play(1);
+    });
+    play_filter.addEventListener('mousemove',function(){
+        just_play(1);
+    });
+    window.onload=function(){
+        if (!is_weixn()){
+            just_play();
+        }
     }
+
 </script>
 
 

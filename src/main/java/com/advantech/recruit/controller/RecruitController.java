@@ -41,6 +41,11 @@ public class RecruitController {
         return "hello";
     }
 
+    @GetMapping("/report")
+    public String report(){
+        return "report";
+    }
+
 
     @RequestMapping("/save")
     public String save(Recruit recruit){
