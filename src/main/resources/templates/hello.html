@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" th:href="@{/css/swiper.min.css}">
     <link rel="stylesheet" th:href="@{/css/animate.min.css}">
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/hello.css}">
     <script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
     <script type="text/javascript" th:src="@{/js/swiper.min.js}"></script>
     <script type="text/javascript" th:src="@{/js/swiper.animate.min.js}"></script>
@@ -48,32 +48,22 @@
 </head>
 <body>
     <div class="swiper-container" id="swiper-container-v">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper" >
             <section class="swiper-slide swiper-slide5 swiper-slide-v">
-                <div class="logo">
-                    <div class="box1">
-                        <div class="box2">
-                            <img class="box3" th:attr="src=@{/upload/wzp_logo.png}">
+                <div calss = "submit-success" style="margin-top: 10%;display: flex;justify-content: center; width: 100%">
+                    <div calss = "tip" id = "tip-info">
+                        <div  id = "shareandback">
+                            <img th:src="@{/images/back.png}" />
+                            <img th:src="@{/images/share.png}" style="margin-left: 30px"/>
+
                         </div>
                     </div>
                 </div>
-                <p class="praise_tip ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.3s"
-                   swiper-animate-delay="0s">已有<b> 5 </b>人觉得这家公司值得加入</p>
-                <a class="praise_btn ani" href="javascript:;" swiper-animate-effect="fadeInUp"
-                   swiper-animate-duration="0.3s" swiper-animate-delay="0.1s">
-                    <i><em></em></i><span>点赞，值得加入</span>
-                </a>
-                <a class="praise_share_btn ani" id="share_btn" href="javascript:;" swiper-animate-effect="fadeInUp"
-                   swiper-animate-duration="0.3s" swiper-animate-delay="0.2s">分享给好友</a>
-                <a class="more_position ani" href="#" id="viewmoreinfozp" swiper-animate-effect="fadeInUp"
-                   swiper-animate-duration="0.3s" swiper-animate-delay="0.3s"></a>
-                <!--<a id="share_btn" href="####">分享到朋友圈</a>-->
-                <div id="shareit">
-                    <img th:attr="src=@{/upload/arrow.png}">
-                    <a href="#" id="follow">
-                        点击右上角"..."分享给微信好友或朋友圈
-                    </a>
+                <div calss = "weichat" style="margin-top: 15px;" id = "weichat">
+                    <p>更多资讯请关注微信公众号</p>
+                    <img th:src="@{/images/weichat.png}">
                 </div>
+
             </section>
         </div>
     </div>

@@ -29,6 +29,10 @@ public class Recruit extends IdEntity{
     private String url;
 
 
+    private String credit;
+
+
+
     public String getName() {
         return name;
     }
@@ -110,4 +114,11 @@ public class Recruit extends IdEntity{
         this.url = url;
     }
 
+    public String getCredit() {
+        return credit;
+    }
+
+    public void setCredit(String credit) {
+        this.credit = credit;
+    }
 }
