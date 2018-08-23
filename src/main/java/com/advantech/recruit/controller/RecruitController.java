@@ -58,15 +58,13 @@ public class RecruitController {
     }
 
     @RequestMapping(value = "/save",method =RequestMethod.POST )
-    public String save(RecruitDto recruit, HttpServletRequest request){
+    public void save(RecruitDto recruit, HttpServletRequest request){
         Recruit save = null;
         try {
             save = recruitService.save(recruit,request);
         }catch(Exception e){
             e.printStackTrace();
         }
-        if(save == null) save = new Recruit();
-        return "redirect:/hello";
     }
 
     @PostMapping("/find")

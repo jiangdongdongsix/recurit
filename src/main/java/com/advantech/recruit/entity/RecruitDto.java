@@ -12,13 +12,13 @@ public class RecruitDto extends IdEntity{
 
     private String grander;
 
-    private String tel;
+    private String phone;
 
     private String email;
 
     private String school;
 
-    private String professional;
+    private String major;
 
     private String background;
 
@@ -27,6 +27,8 @@ public class RecruitDto extends IdEntity{
     private String createTime;
 
     private String url;
+
+    private String credit;
 
     private MultipartFile file;
 
@@ -47,12 +49,12 @@ public class RecruitDto extends IdEntity{
         this.grander = grander;
     }
 
-    public String getTel() {
-        return tel;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setTel(String tel) {
-        this.tel = tel;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getEmail() {
@@ -71,12 +73,12 @@ public class RecruitDto extends IdEntity{
         this.school = school;
     }
 
-    public String getProfessional() {
-        return professional;
+    public String getMajor() {
+        return major;
     }
 
-    public void setProfessional(String professional) {
-        this.professional = professional;
+    public void setMajor(String major) {
+        this.major = major;
     }
 
     public String getBackground() {
@@ -118,5 +120,13 @@ public class RecruitDto extends IdEntity{
 
     public void setFile(MultipartFile file) {
         this.file = file;
+    }
+
+    public String getCredit() {
+        return credit;
+    }
+
+    public void setCredit(String credit) {
+        this.credit = credit;
     }
 }
