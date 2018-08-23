@@ -38,7 +38,7 @@
     <section class="poster_wrap load" id="load">
         <div class="p_loading">
             <div class="p_loading_logo"></div>
-            <p class="p_loading_tip">美满人生，从新工作开始</p>
+            <p class="p_loading_tip">美满人生，即将开启</p>
         </div>
     </section>
     <!--音乐播放-->
@@ -50,366 +50,437 @@
 
     <div class="swiper-wrapper">
         <!--slide1-->
-        <section class="swiper-slide swiper-slide1 swiper-slide-v">
-            <div class="index-top ani" swiper-animate-effect="myZoomIn1" swiper-animate-duration="0.6s"
+        <section class="swiper-slide swiper-slide1">
+            <div class="swiper-slide-section1" swiper-animate-effect="myZoomIn1" swiper-animate-duration="0.6s"
                  swiper-animate-delay="0s">
-                <div class="logo">
-                    <div class="box1">
-                        <div class="box2">
-                            <img th:attr="src=@{/upload/wzp_logo.png}">
-                        </div>
-                    </div>
+                <div class="logo ani" swiper-animate-effect="zoomInDown" swiper-animate-duration="0.5s"
+                     swiper-animate-delay="0.5s">
+                    <img th:attr="src=@{/images/wanted.png}">
                 </div>
-                <h1 class="poster_tit" style="margin-top: 50px">研华科技2019毕业生</h1>
-                <h1 class="poster_tit" style="margin-top: 20px">招募令</h1>
-                <p>
-                    <span style="font-weight:bold;color:green;font-size: 16px">
-                        想在物联网应用最前沿的视野？<br>
-                        想大显身手拥有专业的职业发展平台？<br>
-                        想在活泼有爱奋发向上的氛围里开心工作？<br>
-                    </span>
-                </p>
-                <h1 class="poster_tit" style="margin-top: 20px">
-                    <span style="font-weight:bold;color:yellow;font-size: 24px">
-                        请看这里...
-                    </span>
-                </h1>
+                <div style="text-align:center;padding-top: 8%">
+                    <h2 class="index-fontStyle">研华科技2019毕业生</h2>
+                    <p>
+                        <span style="font-family: 'Blackadder ITC';font-weight:bold;color: #FFC928;font-size: 16px">
+                            <br>
+                            想在物联网应用最前沿的视野？<br><br>
+                            想大显身手拥有专业的职业发展平台？<br><br>
+                            想在活泼有爱奋发向上的氛围里开心工作？<br>
+                        </span>
+                    </p>
+                </div>
+
+                <div align=center style="padding-top: 4%">
+                    <img style="width: 50%" th:attr="src=@{/images/join.png}">
+                </div>
+            </div>
+            <div style="position:absolute;right:5px;bottom:5px;">
+                <img style="position:relative;padding-right:0px;width:140px" th:attr="src=@{/images/bottom.png}">
             </div>
 
-            <div class="building ani" swiper-animate-effect="myZoomIn2" swiper-animate-duration="0.6s"
+            <div swiper-animate-effect="myZoomIn2" swiper-animate-duration="0.6s"
                  swiper-animate-delay="0s"></div>
 
         </section>
         <!-- slide2 -->
         <section class="swiper-slide swiper-slide2 swiper-slide-v">
 
+            <div class="swiper-slide-section2" swiper-animate-effect="myZoomIn1" swiper-animate-duration="0.6s"
+                 swiper-animate-delay="0s">
 
             <ul class="company_intro">
-                <li class="intro1 ani" swiper-animate-effect="myFlip" swiper-animate-duration="0.3s"
+                <li class="intro1 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.3s"
                     swiper-animate-delay="0s">
-                    <div class="icon"><i></i></div>
-                    <p>西安</p>
+                    <img style="width: 150px" th:attr="src=@{/images/block01.png}">
+                    <div class="about_us_tit ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.3s"
+                          swiper-animate-delay="0.3s">
+                        <i class="about_us_detail_ico"></i>五险一金&nbsp;&nbsp;<i class="about_us_detail_ico"></i>补充商业保险<br>
+                        <i class="about_us_detail_ico"></i>带薪休假&nbsp;&nbsp;<i class="about_us_detail_ico"></i>员工定期体检<br>
+                        <i class="about_us_detail_ico"></i>福委会丰富活动
+                    </div>
                 </li>
-                <li class="intro2 ani" swiper-animate-effect="myFlip" swiper-animate-duration="0.3s"
+                <li class="intro2 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.3s"
                     swiper-animate-delay="0.1s">
-                    <div class="icon"><i></i></div>
-                    <p>50-500人</p>
+                    <img style="width: 150px" th:attr="src=@{/images/block02.png}">
+                    <div class="about_us_tit ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.3s"
+                         swiper-animate-delay="0.3s">
+                        <i class="about_us_detail_ico"></i>弱势群体关注<br>
+                        <i class="about_us_detail_ico"></i>员工社团活动（乐活\亲子\桌游）<br>
+                        <i class="about_us_detail_ico"></i>主题日活动（家庭日\庆生会\尾牙\跨区域旅游）
+                    </div>
                 </li>
-                <li class="intro3 ani" swiper-animate-effect="myFlip" swiper-animate-duration="0.3s"
+                <li class="intro3 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.3s"
                     swiper-animate-delay="0.2s">
-                    <div class="icon"><i></i></div>
-                    <p>私营</p>
+                    <img style="width: 150px" th:attr="src=@{/images/block03.png}">
+                    <div class="about_us_tit ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.3s"
+                         swiper-animate-delay="0.3s">
+                        <i class="about_us_detail_ico"></i>新主管训练营&nbsp;&nbsp;<i class="about_us_detail_ico"></i>管理工作坊<br>
+                        <i class="about_us_detail_ico"></i>知识分享&nbsp;&nbsp;<i class="about_us_detail_ico"></i>新人培训（读书会\部门对对碰）<br>
+                        <i class="about_us_detail_ico"></i>TACP-研华外训
+                    </div>
+                </li>
+                <li class="intro4 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.3s"
+                    swiper-animate-delay="0.3s">
+                    <img style="width: 150px" th:attr="src=@{/images/block04.png}">
+                    <div class="about_us_tit ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.3s"
+                         swiper-animate-delay="0.3s">
+                        <i class="about_us_detail_ico"></i>员工素质培训&nbsp;&nbsp;<i class="about_us_detail_ico"></i>读书会<br>
+                        <i class="about_us_detail_ico"></i>员工文化活动（知性探访\益行一路）<br>
+                        <i class="about_us_detail_ico"></i>艺文活动
+                    </div>
                 </li>
             </ul>
 
-
-            <h3 class="about_us_tit ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.3s"
-                swiper-animate-delay="0.3s"><i class="about_us_tit_ico"></i>关于研华</h3>
-            <div swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s"
-                 swiper-animate-delay="0.5s">
-                <p style="padding: 0 22px">
-                    1.	为迎接物联网(IoT)和云端运算时代的到来，研华以智能地球推手(Enabling an Intelligent Planet)作为公司的全新企业形象及愿景。<br><br>
-                    2.	自1983年成立至今，研华全球分支机构遍及21个国家，拥有专职员工逾8000名。<br><br>
-                    3.	研华事业群组织分别专注于工业自动化、嵌入式电脑、智能系统及智能服务四大市场，并联合多家合作伙伴形成了强大的技术服务和营销网络，为客户提供真正全球化布局、本土化响应的便捷服务。<br><br>
-                    4.	研华以智能地球推手为企业使命，并以“驱动智慧城市创新 共建物联产业典范”为企业目标，协助各产业加速其智能化经营，致力于成为智能城市及物联网领域中最具关键影响力的全球企业。<br>
-                </p>
             </div>
 
         </section>
         <!-- slide3 -->
         <section class="swiper-slide swiper-slide3 swiper-slide-v">
-
-            <h1 class="abus_head"><i class="about_us_tit_ico"></i>完整的福利体系</h1>
-
-
-            <div class="welf_bg">
-                <div class="one ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0s"><span>五险一金</span></div>
-                <div class="two ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0.1s"><span>补充商业保险</span></div>
-                <div class="thr ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"><span>带薪假期</span></div>
-                <div class="thi ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"><span>员工定期体检</span></div>
-                <div class="fiv ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"><span>福委会丰富活动</span></div>
+            <div class="swiper-slide-section3" swiper-animate-effect="myZoomIn1" swiper-animate-duration="0.6s"
+                 swiper-animate-delay="0s">
+                <div style="padding: 18% 10% 10% 10%;font-size: 16px">
+                    <p class="about_us_tit ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.3s"
+                       swiper-animate-delay="0.3s">
+                        &nbsp;&nbsp;&nbsp;&nbsp;为迎接物联网(IoT)和云端运算时代的到来，研华以智能地球推手(Enabling an Intelligent Planet)作为公司的全新企业形象及愿景。
+                    </p>
+                    <p class="about_us_tit ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.3s"
+                       swiper-animate-delay="0.4s">
+                        &nbsp;&nbsp;&nbsp;&nbsp;自1983年成立至今，研华全球分支机构遍及21个国家，拥有专职员工逾8000名。
+                    </p>
+                    <p class="about_us_tit ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.3s"
+                       swiper-animate-delay="0.5s">
+                        &nbsp;&nbsp;&nbsp;&nbsp;研华事业群组织分别专注于工业自动化、嵌入式电脑、智能系统及智能服务四大市场，并联合多家合作伙伴形成了强大的技术服务和营销网络，为客户提供真正全球化布局、本土化响应的便捷服务。
+                    </p>
+                    <p class="about_us_tit ani" swiper-animate-effect="lightSpeedIn" swiper-animate-duration="0.3s"
+                       swiper-animate-delay="0.6s">
+                        &nbsp;&nbsp;&nbsp;&nbsp;研华以智能地球推手为企业使命，并以“驱动智慧城市创新 共建物联产业典范”为企业目标，协助各产业加速其智能化经营，致力于成为智能城市及物联网领域中最具关键影响力的全球企业。
+                    </p>
+                </div>
             </div>
         </section>
 
         <!-- slide4 -->
         <section class="swiper-slide swiper-slide4 swiper-slide-v">
-
-            <h1 class="abus_head"><i class="about_us_tit_ico"></i>提升工作能力</h1>
-
-
-            <div class="welf_bg">
-                <div class="one ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0s"><span>新主管训练营</span></div>
-                <div class="two ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0.1s"><span>管理工作坊</span></div>
-                <div class="thr ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"><span>知识分享</span></div>
-                <div class="thi ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"><span>新人培训（读书会\部门对对碰）</span></div>
-                <div class="fiv ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"><span>TACP-研华外训</span></div>
+            <div class="swiper-slide-section4" swiper-animate-effect="myZoomIn1" swiper-animate-duration="0.6s"
+                 swiper-animate-delay="0s">
+                <div style="font-size: 18px">
+                    <ul class="company_intro">
+                        <li class="intro1 ani" style="padding-top: 20px" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.3s"
+                            swiper-animate-delay="0s">
+                            <img style="width: 150px" th:attr="src=@{/images/obj.png}">
+                            <div class="about_us_tit ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.3s"
+                                 swiper-animate-delay="0.3s">
+                                2019毕业的计算机相关专业的全日制本科、硕士
+                            </div>
+                        </li>
+                        <li class="intro2 ani" style="padding-top: 20px" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.3s"
+                            swiper-animate-delay="0.1s">
+                            <img style="width: 150px" th:attr="src=@{/images/position.png}">
+                            <div class="about_us_tit ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.3s"
+                                 swiper-animate-delay="0.3s">
+                                <img style="height: 40px;padding-bottom:10px;display: inline-block" th:attr="src=@{/images/1.png}">&nbsp;&nbsp;<span style="display: inline-block;height: 40px;font-size: x-large">研发类</span>&nbsp;岗位<br>
+                                前台开发/后台开发/运维开发 /软件测试<br><br>
+                                <img style="height: 40px;padding-bottom:10px;display: inline-block" th:attr="src=@{/images/2.png}">&nbsp;&nbsp;<span style="display: inline-block;height: 40px;font-size: x-large">其它类</span>&nbsp;岗位<br>
+                                软件产品经理/云平台运维
+                            </div>
+                        </li>
+                        <li class="intro3 ani" style="padding-top: 20px" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.3s"
+                            swiper-animate-delay="0.2s">
+                            <img style="width: 150px" th:attr="src=@{/images/flow.png}">
+                        </li>
+                    </ul>
+                    <div class="about_us_tit ani" style="padding-top: 10px" align=center  swiper-animate-effect="fadeInRight" swiper-animate-duration="0.3s"
+                         swiper-animate-delay="0.3s">
+                        <img style="height: 80px" th:attr="src=@{/images/recuit_flow.png}">
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- slide5 -->
         <section class="swiper-slide swiper-slide5 swiper-slide-v">
-
-            <h1 class="abus_head"><i class="about_us_tit_ico"></i>提升个人素养</h1>
-
-
-            <div class="welf_bg">
-                <div class="one ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0s"><span>员工素质培训</span></div>
-                <div class="two ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0.1s"><span>读书会</span></div>
-                <div class="thr ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"><span>员工文化活动（知性探访\益行一路）</span></div>
-                <div class="thi ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"><span>艺文活动 </span></div>
-            </div>
-        </section>
-
-        <!-- slide6 -->
-        <section class="swiper-slide swiper-slide6 swiper-slide-v">
-
-            <h1 class="abus_head"><i class="about_us_tit_ico"></i>实现美满人生</h1>
-
-
-            <div class="welf_bg">
-                <div class="one ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0s"><span>弱势群体关注</span></div>
-                <div class="two ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0.1s"><span>员工社团互动（乐活\亲子\桌游）</span></div>
-                <div class="thr ani" style="transition-timing-function:linear;" swiper-animate-effect="myrotateIn"
-                     swiper-animate-duration="0.5s" swiper-animate-delay="0.2s"><span>主题日活动（家庭日\庆生会\尾牙\跨区域旅游）</span></div>
-            </div>
-        </section>
-
-        <!-- slide7 -->
-        <section class="swiper-slide swiper-slide7 swiper-slide-v">
-            <h1 class="posit_tit"><i class="about_us_tit_ico"></i>我们招聘的职位</h1>
             <div class="swiper-container ani" id="swiper-container-h" swiper-animate-effect="rotateInUpLeft"
                  swiper-animate-duration="0.5s" swiper-animate-delay="0s">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide slide1">
-                        <div class="posit_details_head">
-                            <h3 class="posit_details_tit">01	研发类岗位</h3>
-                            <span class="posit_details_money"><strong>前台开发工程师</strong></span>
-                            <!--<p class="posit_details_tip">经验不限、学历本科</p>-->
-                        </div>
-                        <div class="job_details">
-                            <!--<p class="job_address">工作地点：广东省深圳市南山区高新科技园</p>-->
-                            <!--<h3 class="job_name">任职要求：-->
-                                <!--<a class="job_name_details" href="#">职位详情&gt;&gt;</a>-->
-                            <!--</h3>-->
-                            <div>
-                                <h3 class="posit_details_tit">任职资格：</h3>
-                                <p>
-                                    1. 2019年毕业，计算机、数学等相关专业本科及以上学历；<br>
-                                    2. 对Web前端开发(Javascript/HTML/CSS)有基础；<br>
-                                    3. 熟悉掌握VUE、React等前端框架者优先；<br>
-                                    4. 具有很强的责任心，能够有一定的抗压性，积极主动，对开发工作有较高的热情；<br>
-                                    5. 具有良好的学习能力及分析解决问题能力，具良好的沟通能力及团队协作能力。<br>
-                                </p>
+                        <div class="swiper-slide-section5" swiper-animate-effect="myZoomIn1" swiper-animate-duration="0.6s"
+                             swiper-animate-delay="0s">
+                            <div style="padding-top: 24%;padding-left: 12%">
+                                <span style="display: inline-block;height: 40px;font-size: large;font-weight:bold;color: #FEE034">职位一：前台开发工程师</span>
                             </div>
-
+                            <div style="padding: 5% 10% 0 10%;font-size: 14px;color: white;font-family: 'Times New Roman'">
+                                <p class="position_detail ani">
+                                    1.2019年毕业，计算机、数学等相关专业本科及以上学历；
+                                </p>
+                                <P class="position_detail ani">
+                                    2.对Web前端开发(Javascript/HTML/CSS)有基础；
+                                </P>
+                                <P class="position_detail ani">
+                                    3.熟悉掌握VUE、React等前端框架者优先；
+                                </P>
+                                <p class="position_detail ani">
+                                    4.具有很强的责任心，能够有一定的抗压性，积极主动，对开发工作有较高的热情；
+                                </p>
+                                <P class="position_detail ani">
+                                    5.具有良好的学习能力及分析解决问题能力，具良好的沟通能力及团队协作能力。
+                                </P>
+                            </div>
+                            <div align=center style="transform:scale(0.6,0.6)">
+                                <button onclick="alert(123)"
+                                        th:style="'background:'
+                                + 'url(/images/send.png) no-repeat;'
+                                + 'height:' + '83px;' + 'width:' + '286px;'
+                                + 'border-width:' + '0px;'">
+                                    <h2 style="font-weight: bold;margin-bottom: 15px">我要投递</h2>
+                                </button>
+                            </div>
                         </div>
                         <div class="posit_arrow_bot"></div>
-
-
                     </div>
+
                     <div class="swiper-slide slide2">
-
-                        <div class="posit_details_head">
-                            <h3 class="posit_details_tit">01	研发类岗位</h3>
-                            <span class="posit_details_money"><strong>JAVA开发工程师：</strong></span>
-                            <!--<p class="posit_details_tip">经验不限、学历不限</p>-->
-                        </div>
-                        <div class="job_details">
-                            <!--<p class="job_address">工作地点：广东省深圳市南山区高新科技园</p>-->
-                            <!--<h3 class="job_name">任职要求：-->
-                                <!--&lt;!&ndash;<a class="job_name_details" href="#">职位详情&gt;&gt;</a>&ndash;&gt;-->
-                            <!--</h3>-->
-                            <div>
-                                <h3 class="posit_details_tit">任职资格：</h3>
-                                <p>
-                                    1. 2019年毕业，计算机、数学等相关专业本科及以上学历；<br>
-                                    2. 对Web后端开发有一定基础，掌握面向对象程序设计与基本的设计模式；<br>
-                                    3. 熟悉Spring框架者优先；<br>
-                                    4. 具有很强的责任心，能够有一定的抗压性，积极主动，对开发工作有较高的热情；<br>
-                                    5. 具有良好的学习能力及分析解决问题能力，具良好的沟通能力及团队协作能力。<br>
-                                </p>
+                        <div class="swiper-slide-section5" swiper-animate-effect="myZoomIn1" swiper-animate-duration="0.6s"
+                             swiper-animate-delay="0s">
+                            <div style="padding-top: 24%;padding-left: 12%">
+                                <span style="display: inline-block;height: 40px;font-size: large;font-weight:bold;color: #FEE034">职位二：JAVA开发工程师</span>
                             </div>
-
+                            <div style="padding: 5% 10% 0 10%;font-size: 14px;color: white;font-family: 'Times New Roman'">
+                                <p class="position_detail ani">
+                                    1. 2019年毕业，计算机、数学等相关专业本科及以上学历；
+                                </p>
+                                <P class="position_detail ani">
+                                    2. 对Web后端开发有一定基础，掌握面向对象程序设计与基本的设计模式；
+                                </P>
+                                <P class="position_detail ani">
+                                    3. 熟悉Spring框架者优先；
+                                </P>
+                                <p class="position_detail ani">
+                                    4. 具有很强的责任心，能够有一定的抗压性，积极主动，对开发工作有较高的热情；
+                                </p>
+                                <P class="position_detail ani">
+                                    5. 具有良好的学习能力及分析解决问题能力，具良好的沟通能力及团队协作能力。
+                                </P>
+                            </div>
+                            <div align=center style="transform:scale(0.6,0.6)">
+                                <button onclick="alert(123)"
+                                        th:style="'background:'
+                                + 'url(/images/send.png) no-repeat;'
+                                + 'height:' + '83px;' + 'width:' + '286px;'
+                                + 'border-width:' + '0px;'">
+                                    <h2 style="font-weight: bold;margin-bottom: 15px">我要投递</h2>
+                                </button>
+                            </div>
                         </div>
                         <div class="posit_arrow_bot"></div>
                     </div>
                     <div class="swiper-slide slide3">
-
-                        <div class="posit_details_head">
-                            <h3 class="posit_details_tit">01	研发类岗位</h3>
-                            <span class="posit_details_money"><strong>云平台开发工程师：</strong></span>
-                            <!--<p class="posit_details_tip">经验不限、学历大专</p>-->
-                        </div>
-                        <div class="job_details">
-                            <!--<p class="job_address">工作地点：广东省深圳市南山区高新科技园</p>-->
-                            <!--<h3 class="job_name">任职要求：-->
-                                <!--&lt;!&ndash;<a class="job_name_details" href="#">职位详情&gt;&gt;</a>&ndash;&gt;-->
-                            <!--</h3>-->
-                            <div>
-                                <h3 class="posit_details_tit">任职资格：</h3>
-                                <p>
-                                    1.	2019年毕业，计算机、数学等相关专业本科及以上学历；<br>
-                                    2.	熟悉Linux系统管理，能够使用脚本自动执行任务，了解虚拟化技术，包含服务器、网络，存储和互连技术等；<br>
-                                    3.	实作经验C / C ++，Python和/或Java，熟悉Git、Jenkins等相关工具；<br>
-                                    4.	具有很强的责任心，能够有一定的抗压性，积极主动，对开发工作有较高的热情；<br>
-                                    5.	具有良好的学习能力及分析解决问题能力，具良好的沟通能力及团队协作能力。<br>
-                                </p>
+                        <div class="swiper-slide-section5" swiper-animate-effect="myZoomIn1" swiper-animate-duration="0.6s"
+                             swiper-animate-delay="0s">
+                            <div style="padding-top: 24%;padding-left: 12%">
+                                <span style="display: inline-block;height: 40px;font-size: large;font-weight:bold;color: #FEE034">职位三：云平台开发工程师</span>
                             </div>
-
+                            <div style="padding: 5% 10% 0 10%;font-size: 14px;color: white;font-family: 'Times New Roman'">
+                                <p class="position_detail ani">
+                                    1.	2019年毕业，计算机、数学等相关专业本科及以上学历；
+                                </p>
+                                <P class="position_detail ani">
+                                    2.	熟悉Linux系统管理，能够使用脚本自动执行任务，了解虚拟化技术，包含服务器、网络，存储和互连技术等；
+                                </P>
+                                <P class="position_detail ani">
+                                    3.	实作经验C / C ++，Python和/或Java，熟悉Git、Jenkins等相关工具；
+                                </P>
+                                <p class="position_detail ani">
+                                    4.	具有很强的责任心，能够有一定的抗压性，积极主动，对开发工作有较高的热情；
+                                </p>
+                                <P class="position_detail ani">
+                                    5.	具有良好的学习能力及分析解决问题能力，具良好的沟通能力及团队协作能力。
+                                </P>
+                            </div>
+                            <div align=center style="transform:scale(0.6,0.6)">
+                                <button onclick="alert(123)"
+                                        th:style="'background:'
+                                + 'url(/images/send.png) no-repeat;'
+                                + 'height:' + '83px;' + 'width:' + '286px;'
+                                + 'border-width:' + '0px;'">
+                                    <h2 style="font-weight: bold;margin-bottom: 15px">我要投递</h2>
+                                </button>
+                            </div>
                         </div>
                         <div class="posit_arrow_bot"></div>
                     </div>
-
-
                     <div class="swiper-slide slide4">
-                        <div class="posit_details_head">
-                            <h3 class="posit_details_tit">01	研发类岗位</h3>
-                            <span class="posit_details_money"><strong>软件测试：</strong></span>
-                            <!--<p class="posit_details_tip">经验不限、学历大专</p>-->
-                        </div>
-                        <div class="job_details">
-                            <!--<p class="job_address">工作地点：广东省深圳市南山区高新科技园</p>-->
-                            <!--<h3 class="job_name">任职要求：-->
-                                <!--&lt;!&ndash;<a class="job_name_details" href="#">职位详情&gt;&gt;</a>&ndash;&gt;-->
-                            <!--</h3>-->
-                            <div>
-                                <h3 class="posit_details_tit">任职资格：</h3>
-                                <p>
-                                    1.	2019年毕业，计算机、数学等相关专业本科及以上学历；<br>
-                                    2.	了解Web类软件产品以及软件测试的基本知识，具备一定开发能力；<br>
-                                    3.	了解软件性能、压力、稳定性测试的概念，有相关测试经验、工具使用经验者优先；<br>
-                                    4.	具有很强的责任心，能够有一定的抗压性，积极主动，对测试工作有较高的热情；<br>
-                                    5.	具有良好的思维能力及分析解决问题能力，具良好的沟通能力及团队协作能力。<br>
-                                </p>
+                        <div class="swiper-slide-section5" swiper-animate-effect="myZoomIn1" swiper-animate-duration="0.6s"
+                             swiper-animate-delay="0s">
+                            <div style="padding-top: 24%;padding-left: 12%">
+                                <span style="display: inline-block;height: 40px;font-size: large;font-weight:bold;color: #FEE034">职位四：软件测试</span>
                             </div>
-
+                            <div style="padding: 5% 10% 0 10%;font-size: 14px;color: white;font-family: 'Times New Roman'">
+                                <p class="position_detail ani">
+                                    1.	2019年毕业，计算机、数学等相关专业本科及以上学历；
+                                </p>
+                                <P class="position_detail ani">
+                                    2.	了解Web类软件产品以及软件测试的基本知识，具备一定开发能力；
+                                </P>
+                                <P class="position_detail ani">
+                                    3.	了解软件性能、压力、稳定性测试的概念，有相关测试经验、工具使用经验者优先；
+                                </P>
+                                <p class="position_detail ani">
+                                    4.	具有很强的责任心，能够有一定的抗压性，积极主动，对测试工作有较高的热情；
+                                </p>
+                                <P class="position_detail ani">
+                                    5.	具有良好的思维能力及分析解决问题能力，具良好的沟通能力及团队协作能力。
+                                </P>
+                            </div>
+                            <div align=center style="transform:scale(0.6,0.6)">
+                                <button onclick="alert(123) "
+                                        th:style="'background:'
+                                + 'url(/images/send.png) no-repeat;'
+                                + 'height:' + '83px;' + 'width:' + '286px;'
+                                + 'border-width:' + '0px;'">
+                                    <h2 style="font-weight: bold;margin-bottom: 15px">我要投递</h2>
+                                </button>
+                            </div>
                         </div>
                         <div class="posit_arrow_bot"></div>
                     </div>
-
-
                     <div class="swiper-slide slide5">
-                        <div class="posit_details_head">
-                            <h3 class="posit_details_tit">02	其它类岗位</h3>
-                            <span class="posit_details_money"><strong>软件产品经理：</strong></span>
-                            <!--<p class="posit_details_tip">经验不限、学历本科</p>-->
-                        </div>
-                        <div class="job_details">
-                            <!--<p class="job_address">工作地点：广东省深圳市南山区高新科技园</p>-->
-                            <!--<h3 class="job_name">任职要求：-->
-                                <!--&lt;!&ndash;<a class="job_name_details" href="#">职位详情&gt;&gt;</a>&ndash;&gt;-->
-                            <!--</h3>-->
-                            <div>
-                                <h3 class="posit_details_tit">任职资格：</h3>
-                                <p>
-                                    1.	计算机、自动化等相关专业本科及以上学历；<br>
-                                    2.	出色的沟通能力，拥有了解用户 / 客户需求的能力技巧；<br>
-                                    3.	有Web相关软件开发经验佳，熟悉互联网云平台架构（IaaS、PaaS、SaaS）者佳；<br>
-                                    4.	高效地团队协作和文化融合能力，具有良好的思维能力及分析解决问题能力。<br>
+                        <div class="swiper-slide-section5_1" swiper-animate-effect="myZoomIn1" swiper-animate-duration="0.6s"
+                             swiper-animate-delay="0s">
+                            <div style="padding-top: 24%;padding-left: 12%">
+                                <span style="display: inline-block;height: 40px;font-size: large;font-weight:bold;color: #FEE034">职位一：软件产品经理</span>
+                            </div>
+                            <div style="padding: 5% 10% 0 10%;font-size: 14px;color: white;font-family: 'Times New Roman'">
+                                <p class="position_detail ani">
+                                    1.	计算机、自动化等相关专业本科及以上学历；
+                                </p>
+                                <P class="position_detail ani">
+                                    2.	出色的沟通能力，拥有了解用户 / 客户需求的能力技巧；
+                                </P>
+                                <P class="position_detail ani">
+                                    3.	有Web相关软件开发经验佳，熟悉互联网云平台架构（IaaS、PaaS、SaaS）者佳；
+                                </P>
+                                <p class="position_detail ani">
+                                    4.	高效地团队协作和文化融合能力，具有良好的思维能力及分析解决问题能力。
                                 </p>
                             </div>
-
+                            <div align=center style="transform:scale(0.6,0.6)">
+                                <button onclick="alert(123)"
+                                        th:style="'background:'
+                                + 'url(/images/send.png) no-repeat;'
+                                + 'height:' + '83px;' + 'width:' + '286px;'
+                                + 'border-width:' + '0px;'">
+                                    <h2 style="font-weight: bold;margin-bottom: 15px">我要投递</h2>
+                                </button>
+                            </div>
                         </div>
                         <div class="posit_arrow_bot"></div>
                     </div>
 
                     <div class="swiper-slide slide6">
-                        <div class="posit_details_head">
-                            <h3 class="posit_details_tit">02	其它类岗位</h3>
-                            <span class="posit_details_money"><strong>云平台应用工程师：</strong></span>
-                            <!--<p class="posit_details_tip">经验不限、学历本科</p>-->
-                        </div>
-                        <div class="job_details">
-                            <!--<p class="job_address">工作地点：广东省深圳市南山区高新科技园</p>-->
-                            <!--<h3 class="job_name">任职要求：-->
-                            <!--&lt;!&ndash;<a class="job_name_details" href="#">职位详情&gt;&gt;</a>&ndash;&gt;-->
-                            <!--</h3>-->
-                            <div>
-                                <h3 class="posit_details_tit">任职资格：</h3>
-                                <p>
-                                    1.	计算机相关专业本科及以上学历；<br>
-                                    2.	至少具有Bash shell编程的经验,Java或python编程经验是；<br>
-                                    3.	了解服务器，存储和互连技术，熟悉网络架构与网络设备管理；<br>
-                                    4.	具有很强的责任心，能够有一定的抗压性，积极主动，对开发工作有较高的热情；<br>
-                                    5.	具有良好的学习能力及分析解决问题能力，具良好的沟通能力及团队协作能力。<br>
-                                </p>
+                        <div class="swiper-slide-section5" swiper-animate-effect="myZoomIn1" swiper-animate-duration="0.6s"
+                             swiper-animate-delay="0s">
+                            <div style="padding-top: 24%;padding-left: 12%">
+                                <span style="display: inline-block;height: 40px;font-size: large;font-weight:bold;color: #FEE034">职位二：云平台应用工程师</span>
                             </div>
-
+                            <div style="padding: 5% 10% 0 10%;font-size: 14px;color: white;font-family: 'Times New Roman'">
+                                <p class="position_detail ani">
+                                    1.	计算机相关专业本科及以上学历；
+                                </p>
+                                <P class="position_detail ani">
+                                    2.	至少具有Bash shell编程的经验,Java或python编程经验是；
+                                </P>
+                                <P class="position_detail ani">
+                                    3.	了解服务器，存储和互连技术，熟悉网络架构与网络设备管理；
+                                </P>
+                                <p class="position_detail ani">
+                                    4.	具有很强的责任心，能够有一定的抗压性，积极主动，对开发工作有较高的热情；
+                                </p>
+                                <P class="position_detail ani">
+                                    5.	具有良好的学习能力及分析解决问题能力，具良好的沟通能力及团队协作能力。
+                                </P>
+                            </div>
+                            <div align=center style="transform:scale(0.6,0.6)">
+                                <button onclick="alert(123)"
+                                        th:style="'background:'
+                                + 'url(/images/send.png) no-repeat;'
+                                + 'height:' + '83px;' + 'width:' + '286px;'
+                                + 'border-width:' + '0px;'">
+                                    <h2 style="font-weight: bold;margin-bottom: 15px">我要投递</h2>
+                                </button>
+                            </div>
                         </div>
                         <div class="posit_arrow_bot"></div>
                     </div>
 
                 </div>
             </div>
-            <!--<div class="job_btn_con ani" swiper-animate-effect="slideInRight" swiper-animate-duration="0.1s"-->
-                 <!--swiper-animate-delay="0.5s">-->
-                <!--<div class="job_btn_list">-->
-                    <!--<a href="/report" class="button">填写信息</a>-->
-                    <!--<a href="tel:029—87669933" class="button">电话联系</a>-->
-                <!--</div>-->
-            <!--</div>-->
         </section>
 
 
         <section class="swiper-slide swiper-slide6 swiper-slide-v">
-            <!--<div class="logo ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.3s"-->
-            <!--swiper-animate-delay="0s">-->
-            <!--<div class="box1">-->
-            <!--<div class="box2">-->
-            <!--<img class="box3" th:attr="src=@{/upload/wzp_logo.png}">-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
 
-            <div style="width: 70%;position: relative;left: 15%">
-                <div style="height:20px;"></div>
-                <div class="aui-content-up">
+            <div class="swiper-slide-section_common" swiper-animate-effect="myZoomIn1" swiper-animate-duration="0.6s"
+                 swiper-animate-delay="0s">
+            <div style="width: 80%;position: relative;left: 10%">
+                <div style="padding-top: 14%;margin-left: -6%">
+                    <img style="width: 150px" th:attr="src=@{/images/form_title.png}">
+                </div>
+                <div style="margin-top: 10%">
                     <form id="info" method="post" name="info" th:action="@{/save}">
                         <div class="aui-form-group clear">
+                            <div style="display: inline-block;width: 45%">
+                                <div class="aui-form-input">
+                                    <input th:style="'background:' + 'url(/images/person.png) no-repeat;'
+                                    + 'background-size:' + '20px 20px;' + 'height:' + '35px;'
+                                    + 'background-position:' + '5px center;' + 'padding-left:' + '40px;'
+                                    + 'margin-bottom:' + '6%;' + 'width:' + '100%;'"
+                                           type="text" class="aui-form-control-two"
+                                           name="name" onBlur="checkName()" required oninvalid="setCustomValidity('姓名不能为空')" oninput="setCustomValidity('')" id="1" placeholder="姓 名">
+                                </div>
+                                <div style="margin-top: -12px">
+                                    <span class="aui-form-input tips" id="devname"></span>
+                                </div>
+                            </div>
+
+                            <div style="display: inline-block;width: 45%">
+                                <div class="aui-form-input">
+                                    <select class="aui-form-control-two"
+                                            name="grander"
+                                            title="请选择性别"
+                                            th:style="'background:' + 'url(/images/grander.png) no-repeat;'
+                                        + 'background-size:' + '20px 20px;' + 'height:' + '35px;'
+                                        + 'background-position:' + '5px center;' + 'padding-left:' + '40px;'
+                                        + 'margin-bottom:' + '6%' + 'width:' + '100%;'">
+                                        <option value ="male" selected>男</option>
+                                        <option value ="female">女</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <span class="aui-form-input tips" id="grander"></span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="aui-form-group clear">
                             <div class="aui-form-input">
-                                <input th:style="'background:' + 'url(/images/person.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
-                                       type="text" class="aui-form-control-two"
-                                       name="name" onBlur="checkName()" required oninvalid="setCustomValidity('姓名不能为空')" oninput="setCustomValidity('')" id="1" placeholder="姓 名">
+                                <input  th:style="'background:' + 'url(/images/credit.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
+                                        type="text" class="aui-form-control-two" name="credit" id="2" placeholder="身份证号" onBlur="checkCredit()" required oninvalid="setCustomValidity('身份证号码不能为空')" oninput="setCustomValidity('')"/>
                             </div>
                             <div style="margin-top: -12px">
-                                <span class="aui-form-input tips" id="devname"></span>
+                                <span class="aui-form-input tips" id="credit"></span>
                             </div>
                         </div>
                         <div class="aui-form-group clear">
                             <div class="aui-form-input">
                                 <input  th:style="'background:' + 'url(/images/phone.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
                                         type="text" class="aui-form-control-two"
-                                        name="phone" id="2" placeholder="手机号码" onBlur="checkPhone()" required oninvalid="setCustomValidity('手机号码不能为空')" oninput="setCustomValidity('')"/>
+                                        name="phone" id="3" placeholder="手机号码" onBlur="checkPhone()" required oninvalid="setCustomValidity('手机号码不能为空')" oninput="setCustomValidity('')"/>
                             </div>
                             <div style="margin-top: -12px">
                                 <span class="aui-form-input tips" id="phone"></span>
                             </div>
                         </div>
-                        <div class="aui-form-group clear">
-                            <div class="aui-form-input">
-                                <input  th:style="'background:' + 'url(/images/credit.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
-                                        type="text" class="aui-form-control-two" name="credit" id="3" placeholder="身份证号" onBlur="checkCredit()" required oninvalid="setCustomValidity('身份证号码不能为空')" oninput="setCustomValidity('')"/>
-                            </div>
-                            <div style="margin-top: -12px">
-                                <span class="aui-form-input tips" id="credit"></span>
-                            </div>
-                        </div>
+
                         <div class="aui-form-group clear">
                             <div class="aui-form-input">
                                 <input  th:style="'background:' + 'url(/images/email.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
@@ -429,12 +500,37 @@
                             </div>
                         </div>
                         <div class="aui-form-group clear">
-                            <div class="aui-form-input">
-                                <input  th:style="'background:' + 'url(/images/major.png) no-repeat;' + 'background-size:' + '20px 20px;' + 'height:' + '30px;' + 'background-position:' + '5px center;' + 'padding-left:' + '40px;' + 'margin-bottom:' + '6%'"
-                                        type="text" class="aui-form-control-two" name="major" id="6" placeholder="专 业" onBlur="checkMajor()" required oninvalid="setCustomValidity('专业不能为空')" oninput="setCustomValidity('')"/>
+                            <div style="display: inline-block;width: 45%">
+                                <div class="aui-form-input">
+                                    <input th:style="'background:' + 'url(/images/major.png) no-repeat;'
+                                    + 'background-size:' + '20px 20px;' + 'height:' + '35px;'
+                                    + 'background-position:' + '5px center;' + 'padding-left:' + '40px;'
+                                    + 'margin-bottom:' + '6%;' + 'width:' + '100%;'"
+                                           type="text" class="aui-form-control-two"
+                                           name="name" onBlur="checkMajor()" required oninvalid="setCustomValidity('专业不能为空')" oninput="setCustomValidity('')" id="6" placeholder="专业">
+                                </div>
+                                <div style="margin-top: -12px">
+                                    <span class="aui-form-input tips" id="major"></span>
+                                </div>
                             </div>
-                            <div style="margin-top: -12px">
-                                <span class="aui-form-input tips" id="major"></span>
+
+                            <div style="display: inline-block;width: 45%">
+                                <div class="aui-form-input">
+                                    <select class="aui-form-control-two"
+                                            name="grander"
+                                            title="请选择学历"
+                                            th:style="'background:' + 'url(/images/background.png) no-repeat;'
+                                        + 'background-size:' + '20px 20px;' + 'height:' + '35px;'
+                                        + 'background-position:' + '5px center;' + 'padding-left:' + '40px;'
+                                        + 'margin-bottom:' + '6%' + 'width:' + '100%;'">
+                                        <option value ="diploma" selected>本科</option>
+                                        <option value ="master">硕士</option>
+                                        <option value ="doctor">博士</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <span class="aui-form-input tips" id="background"></span>
+                                </div>
                             </div>
                         </div>
                         <div class="aui-form-group clear">
@@ -443,18 +539,23 @@
                             </div>
                         </div>
 
-                        <div class="aui-form-group clear">
-                            <div class="aui-form-input">
-                                <div class="aui-content-img-box aui-content-full">
-                                    <div class="aui-photo aui-up-img clear">
-                                        <section class="aui-file-up fl">
-                                            <img th:src="@{/images/up.png}" class="add-img">
-                                            <input type="file" name="file" id="file" class="file" value=""/>
-                                        </section>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!--<div class="aui-form-group clear">-->
+                            <!--<div class="aui-form-input">-->
+                                <!--<div class="aui-content-img-box aui-content-full">-->
+                                    <!--<div class="aui-photo aui-up-img clear">-->
+                                        <!--<section class="aui-file-up fl">-->
+                                            <!--<label>-->
+                                                <!--<img style="width: 30px;height: 30px;display: inline-block" th:src="@{/images/up.png}" class="add-img">-->
+                                                <!--<input style="display: inline-block" type="file" name="file" id="file" class="file" accept=".doc,.docx,.pdf" value=""/>-->
+                                                <!--<h3 style="display: inline-block;font-size: medium;color: white">添加附件(word简历)</h3>-->
+                                            <!--</label>-->
+                                        <!--</section>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <input  type="file" accept=".doc,.docx,.pdf"/>
+
 
                         <input type="submit"
                                class="btn btn-primary"
@@ -462,15 +563,7 @@
                         </input>
                     </form>
                 </div>
-                <div class="aui-mask aui-works-mask">
-                    <div class="aui-mask-content">
-                        <p class="aui-delete-text">确定要删除你上传的资料？</p>
-                        <p class="aui-check-text">
-                            <span class="aui-delete aui-accept-ok">确定</span>
-                            <span class="aui-accept-no">取消</span>
-                        </p>
-                    </div>
-                </div>
+            </div>
             </div>
         </section>
 
@@ -595,10 +688,10 @@
     function checkPhone(){
         na=info.phone.value;
         if( na.length < 11 || na.length > 11){
-            $('#2')[0].style.border="1px solid red";
+            $('#3')[0].style.border="1px solid red";
             phone.innerHTML='<font class="tips_false">必须是11位数字</font>';
         }else{
-            $('#2')[0].style.border="1px solid green";
+            $('#3')[0].style.border="1px solid green";
             phone.innerHTML='<font class="tips_true">验证通过</font>';
         }
     }
@@ -606,10 +699,10 @@
     function checkCredit(){
         na=info.credit.value;
         if( na.length < 18 || na.length > 18){
-            $('#3')[0].style.border="1px solid red";
+            $('#2')[0].style.border="1px solid red";
             credit.innerHTML='<font class="tips_false">必须是18位身份证号</font>';
         }else{
-            $('#3')[0].style.border="1px solid green";
+            $('#2')[0].style.border="1px solid green";
             credit.innerHTML='<font class="tips_true">验证通过</font>';
         }
     }

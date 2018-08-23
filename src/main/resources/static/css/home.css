@@ -16,8 +16,8 @@
 
 .aui-photo {
     padding: 15px;
-    border-radius: 3px;
-    border: 1px dashed #b3cef9;
+    /*border-radius: 3px;*/
+    /*border: 1px dashed #b3cef9;*/
 }
 
 .aui-photo .aui-file-up {
@@ -131,8 +131,8 @@
     display: block;
     width: 130px;
     height: 130px;
-    border:1px dashed #ddd;
-    border-radius:3px;
+    /*border:1px dashed #ddd;*/
+    /*border-radius:3px;*/
 }
 
 .img-aui-img-name-p{
@@ -195,7 +195,7 @@
 
 /* aui-content-up */
 .aui-content-up {
-    background: #FFF;
+    /*background: #FFF;*/
     border: 1px solid ;
     box-shadow: 0 4px 4px 0 ;
     border-radius: 10px;
@@ -242,12 +242,12 @@
     font-size: 13px;
     line-height: 1.42857143;
     color: #999;
-    background-color: #fff;
+    background-color: rgba(0,0,0,0);
     border-radius: 4px;
     -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    height: 75px;
+    height: 60px;
     resize: none;
     border: 1px solid #b3cef9;
 }
