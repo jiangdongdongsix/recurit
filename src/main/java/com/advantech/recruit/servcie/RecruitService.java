@@ -36,6 +36,7 @@ public class RecruitService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         recruit1.setPhone(recruitDto.getPhone());
         recruit1.setSchool(recruitDto.getSchool());
         recruit1.setName(recruitDto.getName());

@@ -1,9 +1,9 @@
 $(function() {
     var delParent;
     var defaults = {
-        fileType: ["jpg", "png", "doc", "pdf"],
+        fileType: ["doc","docx","pdf"],
         // 上传图片支持的格式
-        fileSize: 1024 * 1024 * 10 // 上传的图片大小不得超过 10M
+        fileSize: 1024 * 1024 * 5 // 上传的图片大小不得超过 5M
     };
     /*点击图片*/
     $(".file").change(function() {
@@ -22,7 +22,7 @@ $(function() {
         var totalNum = numUp + fileList.length;
         //图片总的数量可自定义
         if (fileList.length > 1 || totalNum > 1) {
-            alert("你好！上传图片不得超过1张，请重新选择");
+            alert("你好！只能上传一份文件！");
             //一次选择上传超过3个  自己定义
         } else {
             fileList = validateUp(fileList);
@@ -34,13 +34,13 @@ $(function() {
                 var $span = $("<span class='aui-up-span'>");
                 $span.appendTo($section);
 
-                var $img0 = $("<img class='aui-close-up-img'>").on("click", function(event) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    $(".aui-works-mask").show();
-                    delParent = $(this).parent();
-                });
-                $img0.attr("src", "../images/close.png").appendTo($section);
+                // var $img0 = $("<img class='aui-close-up-img'>").on("click", function(event) {
+                //     event.preventDefault();
+                //     event.stopPropagation();
+                //     $(".aui-works-mask").show();
+                //     delParent = $(this).parent();
+                // });
+                // $img0.attr("src", "../images/close.png").appendTo($section);
                 var $img = $("<img class='aui-to-up-img aui-up-clarity'>");
                 $img.attr("src", imgArr[i]);
                 $img.appendTo($section);
@@ -50,6 +50,7 @@ $(function() {
                 $input.appendTo($section);
                 var $input2 = $("<input id='tags' name='tags' value='' type='hidden'/>");
                 $input2.appendTo($section);
+                // alert("上传成功，请提交！")
 
             }
         }
