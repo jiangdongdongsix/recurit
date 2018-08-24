@@ -53,7 +53,7 @@
                         <img style="width: 150px" th:attr="src=@{/images/form_title.png}">
                     </div>
                     <div style="margin-top: 5%">
-                        <form id="info" method="post" name="info" th:action="@{/save}">
+                        <form id="info" method="post" name="info" th:action="@{/save}" enctype="multipart/form-data">
                             <div style="padding-left: 3%">
                                 <div style="display: inline-block;width: 47%">
                                     <div class="aui-form-input">
@@ -72,14 +72,14 @@
                                 <div style="display: inline-block;width: 47%">
                                     <!--<div class="aui-form-input">-->
                                     <select class="aui-form-control-two"
-                                            name="grander"
+                                            name="gender"
                                             title="请选择性别"
                                             th:style="'background:' + 'url(/images/grander.png) no-repeat;'
                                         + 'background-size:' + '20px 20px;' + 'height:' + '35px;'
                                         + 'background-position:' + '5px center;' + 'padding-left:' + '40px;'
                                         + 'margin-bottom:' + '2.5%;' + 'width:' + '100%;' + 'background-color:' + 'white'">
-                                        <option value ="male" selected>男</option>
-                                        <option value ="female">女</option>
+                                        <option value ="男" selected>男</option>
+                                        <option value ="女">女</option>
                                     </select>
                                     <!--</div>-->
                                     <div>
@@ -157,16 +157,17 @@
                                 <div style="display: inline-block;width: 47%">
                                     <!--<div class="aui-form-input">-->
                                     <select class="aui-form-control-two"
-                                            name="grander"
+                                            name="background"
                                             title="请选择学历"
+                                            form="info"
                                             th:style="'background:' + 'url(/images/background.png) no-repeat;'
                                         + 'background-size:' + '20px 20px;' + 'height:' + '35px;'
                                         + 'background-position:' + '5px center;' + 'padding-left:' + '40px;'
                                         + 'margin-bottom:' + '2.5%;' + 'width:' + '100%;'
                                         + 'background-color:' + 'white'">
-                                        <option value ="diploma" selected>本科</option>
-                                        <option value ="master">硕士</option>
-                                        <option value ="doctor">博士</option>
+                                        <option value ="本科" selected>本科</option>
+                                        <option value ="硕士">硕士</option>
+                                        <option value ="博士">博士</option>
                                     </select>
                                     <!--</div>-->
                                     <div>
@@ -184,7 +185,8 @@
                                 <div style="display: inline-block;width: 60%;margin-left: 35%">
                                     <!--<div class="aui-form-input">-->
                                     <select class="aui-form-control-two"
-                                            name="grander"
+                                            name="position"
+                                            form="info"
                                             th:style="'background:' + 'url(/images/major.png) no-repeat;'
                                         + 'background-size:' + '20px 20px;' + 'height:' + '35px;'
                                         + 'background-position:' + '5px center;' + 'padding-left:' + '25px;'
@@ -212,7 +214,7 @@
                             <div style="margin-left: 5%;margin-top: 2%;display: inline-block">
                                 <label style="display: inline-block">
                                     <img style="display:inline-block;width: 25px;height: 25px;vertical-align:middle;padding-left: -2%" th:src="@{/images/up.png}" class="add-img">
-                                    <input style="display:inline-block;opacity: 0;width:1px;vertical-align:middle" class="myFileUpload" type="file"/>
+                                    <input style="display:inline-block;opacity: 0;width:1px;vertical-align:middle" class="myFileUpload" type="file" name="file"/>
                                     <h5 style="display:inline-block;color: #004280">添加附件(word简历)</h5>
                                 </label>
                                 <div style="display: inline-block;margin-left: 5px">

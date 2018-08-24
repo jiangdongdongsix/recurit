@@ -74,6 +74,8 @@ public class RecruitController {
                      @RequestParam(value = "email", required = true) String email,
                      @RequestParam(value = "school", required = true) String school,
                      @RequestParam(value = "major", required = true) String major,
+                     @RequestParam(value = "gender", required = true) String gender,
+                     @RequestParam(value = "background", required = true) String background,
                      @RequestParam(value = "description", required = false) String description,
                      @RequestParam(value = "file", required = false) MultipartFile file,
                      @RequestParam(value = "position", required = false) String position,
@@ -84,6 +86,8 @@ public class RecruitController {
         recruit.setName(name);
         recruit.setPhone(phone);
         recruit.setCredit(credit);
+        recruit.setBackground(background);
+        recruit.setGender(gender);
         recruit.setEmail(email);
         recruit.setSchool(school);
         recruit.setMajor(major);
@@ -93,7 +97,7 @@ public class RecruitController {
         }else{
             recruit.setPosition(PositionUtils.switchPosition(position));
         }
-
+        System.out.println(recruit.toString());
         try {
              recruitService.save(recruit,file,request);
         }catch(Exception e){
@@ -185,7 +189,7 @@ public class RecruitController {
                 if (bos != null) {
                     bos.close();
                 }
-//                file.delete();
+                file.delete();
             } catch (Exception e) {
                 e.printStackTrace();
                 System.out.println("导出文件关闭流出错");
