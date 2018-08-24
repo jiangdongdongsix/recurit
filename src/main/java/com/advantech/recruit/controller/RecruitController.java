@@ -6,6 +6,7 @@ import com.advantech.recruit.servcie.ExcelSheetService;
 import com.advantech.recruit.servcie.PictureService;
 import com.advantech.recruit.servcie.RecruitService;
 import com.advantech.recruit.utils.PositionUtils;
+import com.advantech.recruit.utils.StringUtils;
 import com.advantech.recruit.utils.ZipUtils;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.ZipOutputStream;
 
+/**
+ *
+ */
 @Controller
 public class RecruitController {
 
@@ -44,18 +48,25 @@ public class RecruitController {
     public String hello(){
         return "hello";
     }
-
     @GetMapping("/report")
     public String report(){
         return "report";
     }
 
-    @RequestMapping("/home")
-    public String home(){
-        return "home";
-    }
 
-
+    /**
+     *  表单提交
+     * @param name
+     * @param phone
+     * @param credit
+     * @param email
+     * @param school
+     * @param major
+     * @param description
+     * @param file
+     * @param request
+     * @return
+     */
     @RequestMapping(value = "/save",method =RequestMethod.POST )
     public String save(@RequestParam(value = "name", required = true) String name,
                      @RequestParam(value = "phone", required = true) String phone,
@@ -65,7 +76,7 @@ public class RecruitController {
                      @RequestParam(value = "major", required = true) String major,
                      @RequestParam(value = "description", required = false) String description,
                      @RequestParam(value = "file", required = false) MultipartFile file,
-//                     @RequestParam(value = "position", required = false) String position,
+                     @RequestParam(value = "position", required = false) String position,
                      HttpServletRequest request){
         System.out.println(file.getName()+"开始上传");
         System.out.println(file.getOriginalFilename()+"开始上传");
@@ -77,26 +88,18 @@ public class RecruitController {
         recruit.setSchool(school);
         recruit.setMajor(major);
         recruit.setDescription(description);
-        recruit.setPosition(PositionUtils.switchPosition("0"));
+        if(StringUtils.isBlank(position)){
+            recruit.setPosition(PositionUtils.switchPosition("9"));
+        }else{
+            recruit.setPosition(PositionUtils.switchPosition(position));
+        }
+
         try {
              recruitService.save(recruit,file,request);
         }catch(Exception e){
             e.printStackTrace();
         }
         return "redirect:hello";
-    }
-
-    @PostMapping("/find")
-    @ResponseBody
-    public ResponseEntity<?> find(){
-        List<Recruit> all= null;
-        try {
-           all = recruitService.findAll();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-        if(all == null) all = new ArrayList<>();
-        return ResponseEntity.status(HttpStatus.OK).body(all);
     }
 
     /**
@@ -106,10 +109,55 @@ public class RecruitController {
     @ResponseBody
     public void doExport(HttpServletRequest request,
                          HttpServletResponse response){
+        try{
+            File file = excelSheetService.createExcel();
+            exportFile(file,request,response);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * 按岗位返回下载的简历bao
+     * 0：前端开发  web app
+     * 1：java开发  java development
+     * 2：云平台开发工程师 cloud development
+     * 3：软件测试   software test
+     * 4：软件产品经理 pm
+     * 5: 云平台应用工程师 cloud application
+     * @param position  投递岗位
+     * @param request
+     * @param response
+     */
+    @GetMapping("/upload")
+    @ResponseBody
+    public void upload(@RequestParam(value = "position", required = false) String position,
+                         HttpServletRequest request,
+                         HttpServletResponse response){
+        try{
+            String s = PositionUtils.switchPosition(position);
+            String localPath = request.getSession().getServletContext().getRealPath("/"+s);
+            File file = ZipUtils.Copy2Demo(localPath,s);
+            exportFile(file,request,response);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+
+
+    /**
+     * 导出文件并通知浏览器下载
+     * @param file
+     * @param request
+     * @param response
+     * @throws Exception
+     */
+    private void exportFile(File file, HttpServletRequest request,HttpServletResponse response) throws Exception{
         BufferedInputStream bis = null;
         BufferedOutputStream bos = null;
         try{
-            File file = excelSheetService.createExcel();
             String aFileName = file.getName();
             request.setCharacterEncoding("UTF-8");
             String agent = request.getHeader("User-Agent").toUpperCase();
@@ -129,10 +177,6 @@ public class RecruitController {
                 bos.write(buff, 0, bytesRead);
             System.out.println("success");
             bos.flush();
-        }catch (Exception e) {
-            // TODO: handle exception
-            e.printStackTrace();
-            System.out.println("导出文件失败！");
         } finally {
             try {
                 if (bis != null) {
@@ -145,74 +189,8 @@ public class RecruitController {
             } catch (Exception e) {
                 e.printStackTrace();
                 System.out.println("导出文件关闭流出错");
-//               LOGGER.error("导出文件关闭流出错！", e);
             }
         }
     }
-
-
-    /**
-     * 导出
-     */
-    @GetMapping("/upload")
-    @ResponseBody
-    public void upload(@RequestParam(value = "position", required = false) String position,
-                         HttpServletRequest request,
-                         HttpServletResponse response){
-        BufferedInputStream bis = null;
-        BufferedOutputStream bos = null;
-        String s = PositionUtils.switchPosition(position);
-        String localPath = request.getSession().getServletContext().getRealPath("/"+s);
-        System.out.println(localPath);
-        try{
-            File file = ZipUtils.Copy2Demo(localPath);
-//                File file = ZipUtils.Copy2Demo("F:\\test");
-                String aFileName = file.getName();
-                request.setCharacterEncoding("UTF-8");
-                String agent = request.getHeader("User-Agent").toUpperCase();
-                if ((agent.indexOf("MSIE") > 0) || ((agent.indexOf("RV") != -1) && (agent.indexOf("FIREFOX") == -1)))
-                    aFileName = URLEncoder.encode(aFileName, "UTF-8");
-                else {
-                    aFileName = new String(aFileName.getBytes("UTF-8"), "ISO8859-1");
-                }
-                response.setContentType("application/x-msdownload;");
-                response.setHeader("Content-disposition", "attachment; filename=" + aFileName);
-                response.setHeader("Content-Length", String.valueOf(file.length()));
-                bis = new BufferedInputStream(new FileInputStream(file));
-                bos = new BufferedOutputStream(response.getOutputStream());
-                byte[] buff = new byte[2048];
-                int bytesRead;
-                while (-1 != (bytesRead = bis.read(buff, 0, buff.length)))
-                    bos.write(buff, 0, bytesRead);
-                System.out.println("success");
-                bos.flush();
-
-
-        }catch (Exception e) {
-            // TODO: handle exception
-            e.printStackTrace();
-            System.out.println("导出文件失败！");
-        } finally {
-            try {
-                if (bis != null) {
-                    bis.close();
-                }
-                if (bos != null) {
-                    bos.close();
-                }
-//                file.delete();
-            } catch (Exception e) {
-                e.printStackTrace();
-//                System.out.println("导出文件关闭流出错");
-//               LOGGER.error("导出文件关闭流出错！", e);
-            }
-        }
-    }
-
-
-
-
-
-
 
 }
