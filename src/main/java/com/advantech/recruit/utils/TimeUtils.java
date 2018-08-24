@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class TimeUtils {
     private static SimpleDateFormat FORMAT_NORMAL = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
+    private static SimpleDateFormat FORMAT_NORMAL2 = new SimpleDateFormat("yyyyMMddHHmmss");
     /**
      *
      *
@@ -17,4 +17,9 @@ public class TimeUtils {
     public static String getCurrentTime(){
         return FORMAT_NORMAL.format(new Date());
     }
+    public static String getCurrentTimeType2(){
+        return FORMAT_NORMAL2.format(new Date());
+    }
+
+
 }

@@ -27,6 +27,7 @@ public class ExcelSheetService {
         HSSFWorkbook book =new HSSFWorkbook();
         HSSFSheet sheet=book.createSheet("recruit");
         List<Recruit> all = recruitService.findAll();
+        //获取对象的所有属性转为字符串数组
         String[] filedName = getFiledName(new Recruit());
         int col = 11;
         //生成表单的第一行，表头

@@ -9,10 +9,14 @@ public class ZipUtils {
     /***
      *多文件压缩
      */
-    public static File Copy2Demo(String path) {
+    public static File Copy2Demo(String path,String s) {
         File file = new File(path);
-        File filezip = new File("RA.zip");
+        File filezip = new File(s+".zip");
         try {
+            if(!file.exists()) {
+                // 如果文件夹不存在，就创建文件夹。
+                file.mkdir();
+            }
             //1,创建文件输出时的文件
             ZipOutputStream zop = new ZipOutputStream(new FileOutputStream(filezip));
             zop.setComment("多文本压缩");
