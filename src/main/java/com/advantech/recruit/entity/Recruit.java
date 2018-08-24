@@ -18,7 +18,7 @@ public class Recruit extends IdEntity{
     /**
      * 性别
      */
-    private String grander;
+    private String gender;
     /**
      * 电话
      */
@@ -71,12 +71,12 @@ public class Recruit extends IdEntity{
         this.name = name;
     }
 
-    public String getGrander() {
-        return grander;
+    public String getGender() {
+        return gender;
     }
 
-    public void setGrander(String grander) {
-        this.grander = grander;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getPhone() {
@@ -158,5 +158,23 @@ public class Recruit extends IdEntity{
 
     public void setPosition(String position) {
         this.position = position;
+    }
+
+    @Override
+    public String toString() {
+        return "Recruit{" +
+                "name='" + name + '\'' +
+                ", createTime='" + createTime + '\'' +
+                ", gender='" + gender + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", school='" + school + '\'' +
+                ", major='" + major + '\'' +
+                ", background='" + background + '\'' +
+                ", description='" + description + '\'' +
+                ", resumeUrl='" + resumeUrl + '\'' +
+                ", credit='" + credit + '\'' +
+                ", position='" + position + '\'' +
+                '}';
     }
 }
