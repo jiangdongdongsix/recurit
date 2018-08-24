@@ -28,7 +28,7 @@ public class ExcelSheetService {
         HSSFSheet sheet=book.createSheet("recruit");
         List<Recruit> all = recruitService.findAll();
         String[] filedName = getFiledName(new Recruit());
-        int col = 10;
+        int col = 11;
         //生成表单的第一行，表头
         HSSFRow row0 =sheet.createRow(0);
         for(int i=0;i<col;i++){
@@ -45,7 +45,7 @@ public class ExcelSheetService {
                 cell.setCellValue(str);
             }
         }
-        File file = new File("db.xls");
+        File file = new File("recruit.xls");
         FileOutputStream out =new FileOutputStream(file);
         book.write(out);//采用book来进行写</span>
         return file;

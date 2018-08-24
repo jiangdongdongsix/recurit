@@ -7,31 +7,61 @@ import javax.persistence.Entity;
 
 @Entity
 public class Recruit extends IdEntity{
-
+    /**
+     * 姓名
+     */
     private String name;
-
+    /**
+     * 提交时间
+     */
+    private String createTime;
+    /**
+     * 性别
+     */
     private String grander;
-
+    /**
+     * 电话
+     */
     private String phone;
-
+    /**
+     * 邮箱
+     */
     private String email;
-
+    /**
+     * 学校
+     */
     private String school;
-
+    /**
+     * 专业
+     */
     private String major;
-
+    /**
+     * 学历
+     */
     private String background;
-
+    /**
+     * 描述
+     */
     private String description;
 
-    private String createTime;
-
-    private String url;
-
-
+    /**
+     * 简历url
+     */
+    private String resumeUrl;
+    /**
+     * 身份证号
+     */
     private String credit;
-
-
+    /**
+     * 投递岗位
+     * 0：前端开发  web app
+     * 1：java开发  java development
+     * 2：云平台开发工程师 cloud development
+     * 3：软件测试   software test
+     * 4：软件产品经理 pm
+     * 5: 云平台应用工程师 cloud application
+     */
+    private String position;
 
     public String getName() {
         return name;
@@ -106,19 +136,27 @@ public class Recruit extends IdEntity{
         this.createTime = createTime;
     }
 
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
     public String getCredit() {
         return credit;
     }
 
     public void setCredit(String credit) {
         this.credit = credit;
+    }
+
+    public String getResumeUrl() {
+        return resumeUrl;
+    }
+
+    public void setResumeUrl(String resumeUrl) {
+        this.resumeUrl = resumeUrl;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 }
