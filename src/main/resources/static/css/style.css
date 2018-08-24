@@ -15,6 +15,11 @@ body{
 	font-family:"microsoft yahei";
 	background: #fff;
 }
+.index-fontStyle{
+    font-family: 'Times New Roman';
+    color: white
+}
+
 #swiper-container-v {
   /*  width: 320px;
     height: 480px;*/
@@ -26,8 +31,61 @@ body{
 .swiper-slide-v{
 	width:100%;
 	height:100%;
-	background: -webkit-linear-gradient(top,#595aa0 0,#5d7fd4 30%,#678fe4 53%,#7ba2de 70%,#afcfc8 100%);
+	/*background: -webkit-linear-gradient(top,#595aa0 0,#5d7fd4 30%,#678fe4 53%,#7ba2de 70%,#afcfc8 100%);*/
 	overflow:hidden;
+}
+.swiper-slide-section1{
+    width:100%;
+    height:100%;
+    background: url("../bg/bg01.jpg");
+    background-size:100%;
+    overflow: hidden;
+}
+.swiper-slide-section2{
+    width:100%;
+    height:100%;
+    background: url("../bg/bg02.jpg");
+    background-size:100%;
+    overflow: hidden;
+}
+.swiper-slide-section3{
+    width:100%;
+    height:100%;
+    background: url("../bg/bg03.jpg");
+    background-size:100%;
+    overflow: hidden;
+}
+.swiper-slide-section4{
+    width:100%;
+    height:100%;
+    background: url("../bg/bg04.jpg");
+    background-size:100%;
+    overflow: hidden;
+}
+.swiper-slide-section5{
+    width:100%;
+    height:100%;
+    background: url("../bg/develop.jpg");
+    background-size:100%;
+    overflow: hidden;
+}
+.swiper-slide-section5_1{
+    width:100%;
+    height:100%;
+    background: url("../bg/develop.jpg");
+    background-size:100%;
+    overflow: hidden;
+}
+.swiper-slide-section_common{
+    width:100%;
+    height:100%;
+    background: url("../bg/common_bg.jpg");
+    background-size:100%;
+    overflow: hidden;
+}
+.position_detail{
+    padding-bottom: 20px;
+    line-height: 20px;
 }
 .swiper-slide4,.swiper-slide5{
 background: -webkit-linear-gradient(top,#7ea5dc 0,#98bbd2 47%,#aecec8 68%,#dbe8ac 100%);
@@ -212,13 +270,14 @@ text-shadow: 1px 1px 1px rgba(0,0,0,.1);
 }
 /**/
 .logo{
-	width: 116px;
-height: 116px;
+/*width: 116px;*/
+/*height: 116px;*/
 margin: 10px auto 0;
 position: relative;
-background: rgba(255,255,255,.03);
+/*background: rgba(255,255,255,.03);*/
 border-radius:100px;
-padding:8px 6px 6px 8px;
+    padding-top: 22%;
+/*padding:8px 6px 6px 8px;*/
 }
 .logo .box1{
 width: 98px;
@@ -278,20 +337,22 @@ margin-top: 10px;
 }
 .building{
 	position: absolute;
-bottom: 0;
-left: 0;
-width: 100%;
-height: 262px;
-background-image: url(../images/zp_index_bg.png);
-background-repeat: no-repeat;
-background-size: cover;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 262px;
+    /*background-image: url(../images/zp_index_bg.png);*/
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
 }
 /**/
 .company_intro{
 	display: -webkit-box;
     display: -webkit-flex;
     display: flex;
-    padding-top: 16%;
+    flex-direction: column;
+    padding-top: 25%;
+    padding-left: 10%;
 }
 .company_intro li{
     -webkit-box-flex: 1;
@@ -331,13 +392,13 @@ margin-top: 20px;
 overflow: hidden;
 }
 .about_us_tit{
-color: #fff;
-font-size: 19px;
-font-family: "黑体";
-text-shadow: 1px 1px 1px rgba(0,0,0,.1);
-line-height: 30px;
-padding-bottom: 10px;
-margin:25px 25px 0;
+    color: #fff;
+    font-size: 15px;
+    font-family: "黑体";
+    line-height: 22px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.1);
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 .about_us_tit_ico {
 display: inline-block;
@@ -348,6 +409,17 @@ border-radius: 100%;
 position: relative;
 vertical-align: middle;
 margin-right: 5px;
+}
+.about_us_detail_ico {
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    background: rgba(255,255,255,.96);
+    border-radius: 100%;
+    position: relative;
+    vertical-align: middle;
+    margin-right: 5px;
+    margin-bottom: 5px;
 }
 .about_us_msg_p{
 color: #fff;
@@ -368,8 +440,8 @@ margin:0 25px;
 /**/
 .abus_head {
 position: absolute;
-top: 40px;
-padding-left: 20px;
+top: 30px;
+padding-left: 30px;
 line-height: 30px;
 color: #fff;
 font-size: 18px;
@@ -462,8 +534,8 @@ font-weight: 400;
 #swiper-container-h{
 	position:absolute;
 	width:100%;
-	top:70px;
-	bottom:110px;
+	top:10px;
+	bottom:60px;
 	overflow:visible;
 }
 @media screen and (max-height: 480px){
@@ -600,7 +672,7 @@ font-weight: 400;
     0%{-webkit-transform: rotateZ(0deg);}
     100%{-webkit-transform: rotateZ(360deg);}
 }
-#musicControl { position:fixed;right:20px;top:20px;margin-top:0;display:inline-block;z-index:99999999}
+#musicControl { position:fixed;right:20px;top:50px;margin-top:0;display:inline-block;z-index:99999999}
 #musicControl a { display:inline-block;width:30px;height:30px;overflow:hidden;background:url('../images/play.png') no-repeat;background-size:100%;}
 #musicControl a audio{width:100%;height:50px;}
 #musicControl a.stop { background-position:left bottom;}

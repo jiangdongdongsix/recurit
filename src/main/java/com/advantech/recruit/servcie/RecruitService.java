@@ -36,9 +36,11 @@ public class RecruitService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         recruit.setResumeUrl(request.getServletContext().getContextPath()+"/"+recruit.getPosition()+"/"+fileName);
         recruit.setCreateTime(TimeUtils.getCurrentTime());
         return recruitRespositry.save(recruit);
+
     }
 
     public List<Recruit> findAll() throws Exception{
