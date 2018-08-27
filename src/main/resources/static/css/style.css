@@ -16,7 +16,7 @@ body{
 	background: #fff;
 }
 .index-fontStyle{
-    font-family: 'Times New Roman';
+    font-family: 黑体;
     color: white
 }
 
@@ -38,49 +38,49 @@ body{
     width:100%;
     height:100%;
     background: url("../bg/bg01.jpg");
-    background-size:100%;
+    background-size:100% 100%;
     overflow: hidden;
 }
 .swiper-slide-section2{
     width:100%;
     height:100%;
     background: url("../bg/bg02.jpg");
-    background-size:100%;
+    background-size:100% 100%;
     overflow: hidden;
 }
 .swiper-slide-section3{
     width:100%;
     height:100%;
     background: url("../bg/bg03.jpg");
-    background-size:100%;
+    background-size:100% 100%;
     overflow: hidden;
 }
 .swiper-slide-section4{
     width:100%;
     height:100%;
     background: url("../bg/bg04.jpg");
-    background-size:100%;
+    background-size:100% 100%;
     overflow: hidden;
 }
 .swiper-slide-section5{
     width:100%;
     height:100%;
     background: url("../bg/develop.png");
-    background-size:100%;
+    background-size:100% 100%;
     overflow: hidden;
 }
 .swiper-slide-section6{
     width:100%;
     height:100%;
     background: url("../bg/other.png");
-    background-size:100%;
+    background-size:100% 100%;
     overflow: hidden;
 }
 .swiper-slide-section_common{
     width:100%;
     height:100%;
     background: url("../bg/common_bg.jpg");
-    background-size:100%;
+    background-size:100% 100%;
     overflow: hidden;
 }
 .position_detail{
@@ -238,7 +238,7 @@ transform: rotateY(360deg);
     width:100%;
     height:100%;
     background: url("../bg/common_bg.jpg");
-    background-size:100%;
+    background-size:100% 100%;
     overflow: hidden;
 }
 .poster_wrap {
