@@ -34,7 +34,7 @@ public class RecruitService {
                 String fileName = TimeUtils.getCurrentTimeType2() + "_" + file.getOriginalFilename();
                 //将文件下入新的文件并保存的指定的路径下
                 file.transferTo(new File(localPath+"\\"+fileName));
-                recruit.setResumeUrl("http://c2t7mg.natappfree.cc"+request.getServletContext().getContextPath()+"/"+recruit.getPosition()+"/"+fileName);
+                recruit.setResumeUrl("http://localhost:9099"+request.getServletContext().getContextPath()+"/"+recruit.getPosition()+"/"+fileName);
             }
             recruit.setCreateTime(TimeUtils.getCurrentTime());
         } catch (Exception e) {

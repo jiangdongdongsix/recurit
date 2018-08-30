@@ -2,11 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>2018研华科技软件园招聘-校园招聘网站</title>
+    <title>2019研华科技校园招聘</title>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
-    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/css/swiper.min.css}">
     <link rel="stylesheet" th:href="@{/css/animate.min.css}">
     <link rel="stylesheet" th:href="@{/css/style.css}">
@@ -16,14 +13,9 @@
     <link rel="bookmark" href="../static/images/favicon.ico" />
 
     <script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
-    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
     <script type="text/javascript" th:src="@{/js/swiper.min.js}"></script>
     <script type="text/javascript" th:src="@{/js/swiper.animate.min.js}"></script>
-    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -208,17 +200,19 @@
 
                             <div class="aui-form-group clear" style="margin-top: -7%">
                                 <div class="aui-form-input">
-                                    <textarea style="background-color: white" class="aui-form-control" name="description" id="7" minlength="5">特别说明...</textarea>
+                                    <textarea style="background-color: white" class="aui-form-control" name="des" id="7" minlength="5" placeholder="特别说明...(可以简单描述个人优势、特长、个人想法等等)"></textarea>
                                 </div>
                             </div>
+
+
                             <div style="margin-left: 5%;margin-top: 2%;display: inline-block">
                                 <label style="display: inline-block">
                                     <img style="display:inline-block;width: 25px;height: 25px;vertical-align:middle;padding-left: -2%" th:src="@{/images/up.png}" class="add-img">
                                     <input style="display:inline-block;opacity: 0;width:1px;vertical-align:middle" class="myFileUpload" type="file" name="file"/>
-                                    <h5 style="display:inline-block;color: #004280">添加附件(word简历)</h5>
+                                    <h5 style="display:inline-block;color: #004280">添加附件(个人简历)</h5>
                                 </label>
                                 <div style="display: inline-block;margin-left: 5px">
-                                    <span style="display:inline-block;color: white;" class="show"></span>
+                                    <span style="display:inline-block;color: white;" class="show">(支持.doc .pdf .png)</span>
                                 </div>
                             </div>
                             <div id="bottom" align=center style="transform:scale(0.6,0.6);
@@ -238,41 +232,18 @@
         </section>
 
     </div>
-    <!--<div class="arrow-box">-->
-        <!--<img th:src="@{/images/arrow.png}" id="array">-->
-    <!--</div>-->
-    <!--<div class="swiper-pagination"></div>-->
 </div>
 <script th:src="@{/js/code.min.js}"></script>
 <script th:src="@{/js/jquery.min.js}"></script>
 <script type="text/javascript" th:inline="javascript">
 
-    // function sub(){
-    //     $.ajax({
-    //         type:"post",
-    //         url:"@{/save}",
-    //         data:$("#formApply").serialize(),
-    //         success: function (data) {
-    //             // window.location.reload();
-    //         }
-    //     })
-    // }
-    function wxShare() {
-        alert("Thanks!");
-    };
-
     $(function() {
+        $('#mc_play audio').get(0).play();
         $(".myFileUpload").change(function() {
             var arrs=$(this).val().split('\\');
             var filename=arrs[arrs.length-1];
-            // alert(filename.length)
-            if (filename.length > 14) {
-                alert("文件名过长，请修改后上传！");
-                return;
-            }
             $(".show").html(filename);
         });
-        play_music();
     });
     function play_music(){
         if ($('#mc_play').hasClass('on')){
@@ -282,53 +253,7 @@
             $('#mc_play audio').get(0).play();
             $('#mc_play').attr('class','on');
         }
-        // $('#music_play_filter').hide();
-        // event.stopPropagation(); //阻止冒泡
     };
-    function just_play(id){
-        $('#mc_play audio').get(0).play();
-        $('#mc_play').attr('class','on');
-        if (typeof(id)!='undefined'){
-            // $('#music_play_filter').hide();
-        }
-        // event.stopPropagation(); //阻止冒泡
-    };
-    function is_weixn(){
-        return false;
-        var ua = navigator.userAgent.toLowerCase();
-        if(ua.match(/MicroMessenger/i)=="micromessenger") {
-            return true;
-        } else {
-            return false;
-        }
-    };
-    var play_filter=document.getElementById('music_play_filter');
-    play_filter.addEventListener('click', function(){
-        just_play(1);
-    });
-    play_filter.addEventListener('touchstart', function(){
-        just_play(1);
-    });
-    play_filter.addEventListener('touchend', function(){
-        just_play(1);
-    });
-    play_filter.addEventListener('touchmove', function(){
-        just_play(1);
-    });
-    play_filter.addEventListener('mousedown', function(){
-        just_play(1);
-    });
-    play_filter.addEventListener('mouseup', function(){
-        just_play(1);
-    });
-    play_filter.addEventListener('mousemove',function(){
-        just_play(1);
-    });
-    window.onload=function(){
-        if (!is_weixn()){
-            just_play();
-        }
-    }
 
     //验证姓名
     function checkName(){

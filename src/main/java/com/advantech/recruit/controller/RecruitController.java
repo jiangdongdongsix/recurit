@@ -39,14 +39,13 @@ public class RecruitController {
      * 返回主页面
      * @return
      */
-    @GetMapping("/page")
+    @GetMapping("/index")
     public String back(){
         return "index";
     }
-
-    @GetMapping("/hello")
+    @GetMapping("/result")
     public String hello(){
-        return "hello";
+        return "result";
     }
     @GetMapping("/report")
     public String report(){
@@ -62,21 +61,21 @@ public class RecruitController {
      * @param email
      * @param school
      * @param major
-     * @param description
      * @param file
      * @param request
      * @return
      */
     @RequestMapping(value = "/save",method =RequestMethod.POST )
-    public String save(@RequestParam(value = "name", required = true) String name,
+    public String save(
+                     @RequestParam(value = "name", required = true) String name,
                      @RequestParam(value = "phone", required = true) String phone,
                      @RequestParam(value = "credit", required = true) String credit,
                      @RequestParam(value = "email", required = true) String email,
                      @RequestParam(value = "school", required = true) String school,
                      @RequestParam(value = "major", required = true) String major,
                      @RequestParam(value = "gender", required = true) String gender,
-                     @RequestParam(value = "background", required = true) String background,
-                     @RequestParam(value = "description", required = false) String description,
+                     @RequestParam(value = "background", required = false) String background,
+                     @RequestParam(value = "des", required = false)String des,
                      @RequestParam(value = "file", required = false) MultipartFile file,
                      @RequestParam(value = "position", required = false) String position,
                      HttpServletRequest request){
@@ -91,7 +90,7 @@ public class RecruitController {
         recruit.setEmail(email);
         recruit.setSchool(school);
         recruit.setMajor(major);
-        recruit.setDescription(description);
+        recruit.setDescription(des);
         if(StringUtils.isBlank(position)){
             recruit.setPosition(PositionUtils.switchPosition("9"));
         }else{
@@ -103,7 +102,7 @@ public class RecruitController {
         }catch(Exception e){
             e.printStackTrace();
         }
-        return "redirect:hello";
+        return "redirect:result";
     }
 
     /**
@@ -150,7 +149,6 @@ public class RecruitController {
 
     }
 
-
     /**
      * 导出文件并通知浏览器下载
      * @param file
@@ -196,5 +194,4 @@ public class RecruitController {
             }
         }
     }
-
 }
