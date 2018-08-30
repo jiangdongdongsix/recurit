@@ -65,14 +65,14 @@ body{
 .swiper-slide-section5{
     width:100%;
     height:100%;
-    background: url("../bg/develop.png");
+    background: url("../bg/develop_back.png");
     background-size:100% 100%;
     overflow: hidden;
 }
 .swiper-slide-section6{
     width:100%;
     height:100%;
-    background: url("../bg/other.png");
+    background: url("../bg/other_back.png");
     background-size:100% 100%;
     overflow: hidden;
 }
@@ -88,7 +88,12 @@ body{
     line-height: 20px;
 }
 .swiper-slide4,.swiper-slide5{
-background: -webkit-linear-gradient(top,#7ea5dc 0,#98bbd2 47%,#aecec8 68%,#dbe8ac 100%);
+/*background: -webkit-linear-gradient(top,#7ea5dc 0,#98bbd2 47%,#aecec8 68%,#dbe8ac 100%);*/
+    background: url("../bg/common_bg.jpg");
+    width:100%;
+    height:100%;
+    background-size:100% 100%;
+    overflow: hidden;
 }
 .swiper-slide6{
 	background: -webkit-linear-gradient(top,#5b317a 0,#7a448e 46%,#a25b85 64%,#cc7478 82%,#e9896e 100%);
@@ -539,7 +544,7 @@ font-weight: 400;
 #swiper-container-h{
 	position:absolute;
 	width:100%;
-	top:10px;
+	top:10%;
 	bottom:60px;
 	overflow:visible;
 }

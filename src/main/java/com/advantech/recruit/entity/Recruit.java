@@ -124,7 +124,7 @@ public class Recruit extends IdEntity{
         return description;
     }
 
-    public void setDescription(String des) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
