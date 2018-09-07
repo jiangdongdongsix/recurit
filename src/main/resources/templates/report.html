@@ -28,11 +28,11 @@
         </div>
     </section>
     <!--音乐播放-->
-    <span id="musicControl">
-        <a id="mc_play" class="on" onclick="play_music()">
-            <audio id="musicfx" th:attr="src=@{/music/children.mp3}" autoplay preload loop="loop"></audio>
-        </a>
-    </span>
+    <!--<span id="musicControl">-->
+        <!--<a id="mc_play" class="on" onclick="play_music()">-->
+            <!--<audio id="musicfx" th:attr="src=@{/music/children.mp3}" autoplay preload loop="loop"></audio>-->
+        <!--</a>-->
+    <!--</span>-->
 
     <div class="swiper-wrapper">
 
@@ -238,22 +238,22 @@
 <script type="text/javascript" th:inline="javascript">
 
     $(function() {
-        $('#mc_play audio').get(0).play();
+        // $('#mc_play audio').get(0).play();
         $(".myFileUpload").change(function() {
             var arrs=$(this).val().split('\\');
             var filename=arrs[arrs.length-1];
             $(".show").html(filename);
         });
     });
-    function play_music(){
-        if ($('#mc_play').hasClass('on')){
-            $('#mc_play audio').get(0).pause();
-            $('#mc_play').attr('class','stop');
-        }else{
-            $('#mc_play audio').get(0).play();
-            $('#mc_play').attr('class','on');
-        }
-    };
+    // function play_music(){
+    //     if ($('#mc_play').hasClass('on')){
+    //         $('#mc_play audio').get(0).pause();
+    //         $('#mc_play').attr('class','stop');
+    //     }else{
+    //         $('#mc_play audio').get(0).play();
+    //         $('#mc_play').attr('class','on');
+    //     }
+    // };
 
     //验证姓名
     function checkName(){
