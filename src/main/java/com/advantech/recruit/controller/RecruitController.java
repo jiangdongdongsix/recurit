@@ -140,13 +140,26 @@ public class RecruitController {
                          HttpServletResponse response){
         try{
             String s = PositionUtils.switchPosition(position);
-            String localPath = request.getSession().getServletContext().getRealPath("/"+s);
+            String localPath = request.getSession().getServletContext().getRealPath("/resume/"+s);
             File file = ZipUtils.Copy2Demo(localPath,s);
             exportFile(file,request,response);
         }catch (Exception e){
             e.printStackTrace();
         }
 
+    }
+
+    @GetMapping("/upload/all")
+    @ResponseBody
+    public void upload(HttpServletRequest request,
+                       HttpServletResponse response){
+        try{
+            String localPath = request.getSession().getServletContext().getRealPath("/resume");
+            File file = ZipUtils.Copy2Demo(localPath,"resume");
+            exportFile(file,request,response);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     /**
