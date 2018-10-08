@@ -21,20 +21,28 @@ public class RecruitService {
 
     public Recruit save(Recruit recruit, MultipartFile file, HttpServletRequest request) throws Exception{
         //获取服务器下的绝对路径
-        String localPath = request.getSession().getServletContext().getRealPath("/"+recruit.getPosition());
-        File dir = new File(localPath);
+        String basePath = request.getSession().getServletContext().getRealPath("/resume");
+        File dir = new File(basePath);
         if(!dir.exists()) {
             // 如果文件夹不存在，就创建文件夹。
             dir.mkdir();
         }
+
+        String localPath = request.getSession().getServletContext().getRealPath("/resume/"+recruit.getPosition());
+        File dir2 = new File(localPath);
+        if(!dir2.exists()) {
+            // 如果文件夹不存在，就创建文件夹。
+            dir2.mkdir();
+        }
+
         try {
             //判断文件是否为空
             if(!StringUtils.isBlank(file.getOriginalFilename())){
                 //重构文件名 时间戳+原始名
                 String fileName = TimeUtils.getCurrentTimeType2() + "_" + file.getOriginalFilename();
                 //将文件下入新的文件并保存的指定的路径下
-                file.transferTo(new File(localPath+"\\"+fileName));
-                recruit.setResumeUrl("http://axahr.advantech.com.cn:1800"+request.getServletContext().getContextPath()+"/"+recruit.getPosition()+"/"+fileName);
+                file.transferTo(new File(localPath+"/"+fileName));
+                recruit.setResumeUrl("http://axahr.advantech.com.cn:1800"+request.getServletContext().getContextPath()+"/resume/"+recruit.getPosition()+"/"+fileName);
             }
             recruit.setCreateTime(TimeUtils.getCurrentTime());
         } catch (Exception e) {
