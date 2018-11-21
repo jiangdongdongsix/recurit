@@ -10,6 +10,7 @@ import com.advantech.recruit.utils.StringUtils;
 import com.advantech.recruit.utils.ZipUtils;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -25,7 +26,8 @@ import java.util.List;
 import java.util.zip.ZipOutputStream;
 
 /**
- *
+ * @author dongdong.jiang
+ * recruit
  */
 @Controller
 public class RecruitController {
@@ -34,6 +36,9 @@ public class RecruitController {
     private RecruitService recruitService;
     @Autowired
     private ExcelSheetService  excelSheetService;
+
+    @Value("${openstack.recruit.path}")
+    private String recruitUrl;
 
     /**
      * 返回主页面
@@ -52,28 +57,15 @@ public class RecruitController {
         return "report";
     }
 
-
-    /**
-     *  表单提交
-     * @param name
-     * @param phone
-     * @param credit
-     * @param email
-     * @param school
-     * @param major
-     * @param file
-     * @param request
-     * @return
-     */
     @RequestMapping(value = "/save",method =RequestMethod.POST )
     public String save(
-                     @RequestParam(value = "name", required = true) String name,
-                     @RequestParam(value = "phone", required = true) String phone,
-                     @RequestParam(value = "credit", required = true) String credit,
-                     @RequestParam(value = "email", required = true) String email,
-                     @RequestParam(value = "school", required = true) String school,
-                     @RequestParam(value = "major", required = true) String major,
-                     @RequestParam(value = "gender", required = true) String gender,
+                     @RequestParam(value = "name") String name,
+                     @RequestParam(value = "phone") String phone,
+                     @RequestParam(value = "credit") String credit,
+                     @RequestParam(value = "email") String email,
+                     @RequestParam(value = "school") String school,
+                     @RequestParam(value = "major") String major,
+                     @RequestParam(value = "gender") String gender,
                      @RequestParam(value = "background", required = false) String background,
                      @RequestParam(value = "des", required = false)String des,
                      @RequestParam(value = "file", required = false) MultipartFile file,
@@ -120,7 +112,6 @@ public class RecruitController {
         }
     }
 
-
     /**
      * 按岗位返回下载的简历bao
      * 0：前端开发  web app
@@ -135,12 +126,17 @@ public class RecruitController {
      */
     @GetMapping("/upload")
     @ResponseBody
-    public void upload(@RequestParam(value = "position", required = false) String position,
+    public void upload(@RequestParam(value = "position", defaultValue = "") String position,
                          HttpServletRequest request,
                          HttpServletResponse response){
+        String localPath;
         try{
             String s = PositionUtils.switchPosition(position);
-            String localPath = request.getSession().getServletContext().getRealPath("/resume/"+s);
+            if("".equals(position)){
+                localPath = recruitUrl;
+            }else {
+                localPath = recruitUrl +"/"+s;
+            }
             File file = ZipUtils.Copy2Demo(localPath,s);
             exportFile(file,request,response);
         }catch (Exception e){
@@ -154,8 +150,7 @@ public class RecruitController {
     public void upload(HttpServletRequest request,
                        HttpServletResponse response){
         try{
-            String localPath = request.getSession().getServletContext().getRealPath("/resume");
-            File file = ZipUtils.Copy2Demo(localPath,"resume");
+            File file = ZipUtils.Copy2Demo(recruitUrl,"resume");
             exportFile(file,request,response);
         }catch (Exception e){
             e.printStackTrace();
@@ -176,9 +171,9 @@ public class RecruitController {
             String aFileName = file.getName();
             request.setCharacterEncoding("UTF-8");
             String agent = request.getHeader("User-Agent").toUpperCase();
-            if ((agent.indexOf("MSIE") > 0) || ((agent.indexOf("RV") != -1) && (agent.indexOf("FIREFOX") == -1)))
+            if ((agent.indexOf("MSIE") > 0) || ((agent.indexOf("RV") != -1) && (agent.indexOf("FIREFOX") == -1))) {
                 aFileName = URLEncoder.encode(aFileName, "UTF-8");
-            else {
+            } else {
                 aFileName = new String(aFileName.getBytes("UTF-8"), "ISO8859-1");
             }
             response.setContentType("application/x-msdownload;");
@@ -188,8 +183,9 @@ public class RecruitController {
             bos = new BufferedOutputStream(response.getOutputStream());
             byte[] buff = new byte[2048];
             int bytesRead;
-            while (-1 != (bytesRead = bis.read(buff, 0, buff.length)))
+            while (-1 != (bytesRead = bis.read(buff, 0, buff.length))) {
                 bos.write(buff, 0, bytesRead);
+            }
             System.out.println("success");
             bos.flush();
         } finally {

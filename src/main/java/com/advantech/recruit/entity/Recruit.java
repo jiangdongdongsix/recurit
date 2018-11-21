@@ -22,6 +22,7 @@ public class Recruit extends IdEntity{
     /**
      * 电话
      */
+    @Column(unique = true)
     private String phone;
     /**
      * 邮箱

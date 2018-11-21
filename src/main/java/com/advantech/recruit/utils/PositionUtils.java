@@ -17,7 +17,7 @@ public class PositionUtils {
             case "5":
                 return "云平台应用工程师";
             default:
-                return  "java开发";
+                return  "简历";
         }
     }
 
